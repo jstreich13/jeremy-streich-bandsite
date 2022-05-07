@@ -1,0 +1,44 @@
+@use 'variables' as *;
+
+@mixin tablet {
+	@media screen and (min-width: $tablet-breakpoint) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media screen and (min-width: $desktop-breakpoint) {
+		@content;
+	}
+}
+
+@mixin white {
+	color: white;
+}
+
+@mixin marg {
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+@mixin align-left {
+	position: relative;
+	left: 16px;
+}
+
+@mixin footer-orientation {
+	margin: 3vh 0 0 0;
+}
+
+@mixin font-face {
+	@font-face {
+		font-family: 'Avenir Next';
+		src: url(../.././Assets/Font/AvenirNextLTPro-Regular.otf);
+	}
+}
+
+// @mixin font-face-heavy {
+// 	@font-face-heavy {
+// 		font-family: 'Avenir Next Bold';
+// 		src: url(../.././Assets/Font/AvenirNextLTPro-Bold.otf);
+// 	}
