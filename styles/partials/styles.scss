@@ -9,6 +9,7 @@ html {
 html,
 body {
 	margin: 0;
+	margin-right: 0%;
 }
 * {
 	max-width: 768px;
@@ -61,8 +62,8 @@ body {
 }
 
 .body {
-	padding-left: 16px;
-	padding-right: 16px;
+	padding-left: 20px;
+	padding-right: 20px;
 	max-width: 767px;
 	margin: 0;
 }
@@ -77,6 +78,13 @@ body {
 	margin-left: 0px;
 	margin-right: auto;
 	justify-content: center;
+	width: 107vw;
+
+	@include tablet {
+		display: inline-flex;
+		padding-right: 126vw;
+		height: 7vh;
+	}
 }
 
 .header__name {
@@ -87,6 +95,15 @@ body {
 	max-width: 37%;
 	right: 31vw;
 	font-family: "Avenir Next";
+
+	@include tablet {
+		display: inline-flex;
+		flex-direction: row;
+		position: absolute;
+		left: 4vw;
+		top: 2.5vh;
+		width: 15vw;
+	}
 }
 
 .header__nav {
@@ -95,9 +112,16 @@ body {
 	font-size: 14px;
 	position: relative;
 	left: 7vw;
+
+	@include tablet {
+		display: inline-flex;
+		position: relative;
+		bottom: 3vh;
+		left: 9vw;
+	}
 }
 
-.header__nav--items {
+.header__nav--items1 {
 	color: white;
 	margin: 0px 118px 0px -13px;
 	font-family: Avenir Next;
@@ -106,7 +130,33 @@ body {
 	font-weight: 400;
 	top: 0.5vh;
 	font-size: 18px;
+
+	@include tablet {
+		display: inline-flex;
+		position: fixed;
+		top: 2.25vh;
+		left: 28vw;
+	}
 }
+
+.header__nav--items2 {
+	color: white;
+	margin: 0px 118px 0px -13px;
+	font-family: Avenir Next;
+	right: -12vw;
+	position: relative;
+	font-weight: 400;
+	top: 0.5vh;
+	font-size: 18px;
+
+	@include tablet {
+		display: flex;
+		position: relative;
+		left: 83vw;
+		top: 2.25vh;
+	}
+}
+
 // .hero {
 // 	opacity: #323232 50%;
 // 	background-image: url(../../Assets/Images/hero-bio.jpg);
@@ -125,20 +175,31 @@ body {
 
 .hero__image {
 	position: absolute;
-	opacity: 0.5;
 	padding-top: auto;
-	margin-top: auto;
+	margin-top: -12px;
 	position: relative;
+	top: 13px;
+	width: 107vw;
+	background-image: url(../../Assets/Images/hero-bio.jpg);
+	height: 40vh;
+	background-size: cover;
+	background-position: center center;
+	background-color: dimgray;
+	background-blend-mode: multiply;
+
+	@include tablet {
+		padding-bottom: 40vh;
+		padding-right: 126vw;
+	}
 }
 
-.hero__image--opacity {
-	background-color: black;
-	top: 13px;
-	position: absolute;
-	z-index: -1;
-	height: 48.5%;
-	//need to set parent as absolute so that this is relative to it
-}
+// .hero__image--opacity {
+
+// 	// position: absolute;
+// 	// z-index: -1;
+
+// 	// //need to set parent as absolute so that this is relative to it
+// }
 
 .hero__name {
 	color: white;
@@ -146,9 +207,13 @@ body {
 	position: relative;
 	right: -7vw;
 	bottom: 23vh;
-	font-family: Avenir Next;
+	font-family: Avenir Next Demi;
 	font-weight: 500;
-	font-size: 28px;
+	font-size: 7vw;
+
+	@include tablet {
+		display: flex;
+	}
 }
 
 // .gallery {
@@ -193,36 +258,61 @@ body {
 // }
 
 .about {
-	width: 100vw;
+	width: 104vw;
 	position: relative;
 	top: -14vh;
+
+	@include tablet {
+	}
 }
 
 .about__title {
 	margin-bottom: 0px;
-	margin-left: 16px;
-	font-family: 'Avenir Next Demi';
+	margin-left: 20px;
+	font-family: "Avenir Next Demi";
 	font-weight: 6px;
-	font-size: 30px;
+	font-size: 8vw;
 	padding-top: 9vh;
 	padding-bottom: 2vh;
 	color: #323232;
+	padding-top: 11vh;
+	margin-top: 3vh;
+
+	@include tablet {
+		font-size: 4vw;
+		padding-bottom: 1.25vh;
+		padding-top: 8.5vh;
+		margin-left: 8vw;
+	}
 }
 
 .about__image {
 	max-width: 100vw;
-	width: 91%;
-	margin-left: 12px;
-	// margin-right: 10px;
+	width: 99vw;
+	margin-left: 16px;
+	margin-right: 16px;
+
+	@include tablet {
+		height: 45vh;
+		width: 83vw;
+		margin-left: 20vw;
+		margin-top: 1vh;
+	}
 }
+
 .about__quote,
 .about__quote--attribution {
 	font-family: "Avenir Next Demi";
 	color: black;
 	font-weight: inherit;
-	width: 91%;
-	margin-left: 16px;
-	margin-right: 14px;
+	width: 107vw;
+	margin-left: 19px;
+
+	@include tablet {
+		width: 83vw;
+		margin-left: 20vw;
+		font-size: 3vw;
+	}
 }
 
 .about__quote--attribution {
@@ -230,66 +320,172 @@ body {
 	font-weight: 900;
 	width: 84%;
 	color: black;
+
+	@include tablet {
+		@include about-spacing-tablet;
+	}
 }
 
-.about__subtitle {
-	margin-left: 16px;
+.about__texts {
+	@include tablet {
+		margin-left: 16px;
+		display: flex;
+	}
+}
+
+.about__texts--subtitle {
+	margin-left: 20px;
 	font-family: Avenir Next;
 	font-size: 18px;
 	color: black;
+
+	@include tablet {
+		display: flex;
+		min-width: -webkit-fill-available;
+		position: relative;
+		left: 17vw;
+		font-size: 2.5vw;
+	}
 }
-.about__text {
-	margin-left: 0;
+.about__texts--box2,
+.about__texts--box1 {
+	margin-left: 22px;
 	font-family: Avenir Next;
 	font-weight: 14px;
-	font-size: 16px;
-	width: 88%;
+	font-size: 4vw;
+	width: 90%;
+
+	@include tablet {
+		display: flex;
+		width: 700vw;
+		padding: left;
+		position: relative;
+		right: 77vw;
+		top: 4vh;
+		font-size: 2vw;
+		min-width: 40vw;
+	}
 }
+
 .gallery {
 	margin-top: 0;
 	padding-top: 0;
 	position: relative;
 	bottom: 13vh;
+
+	@include tablet {
+	}
 }
 
 .gallery__title {
 	font-family: Avenir Next Demi;
-	font-size: 28px;
+	font-size: 7vw;
 	color: #323232;
 	padding-bottom: 0%;
-	margin-bottom: -5px;
-	margin-left: 16px;
+	margin-bottom: 1vh;
+	margin-left: 5vw;
+
+	@include tablet {
+		font-size: 5vw;
+		padding-bottom: 1vh;
+		padding-top: 6vh;
+	}
+}
+
+.gallery__row1 {
+	@include tablet {
+		display: inline-flex;
+		width: 5vw;
+	}
+}
+
+.gallery__row2 {
+	width: 100vw;
+	display: inline-flex;
+}
+
+.gallery__row3 {
+	@include tablet {
+		width: 100vw;
+		display: inline-flex;
+	}
 }
 
 .gallery__image {
-	margin: 16px;
-	width: 87%;
-	margin-bottom: auto;
+	width: 97vw;
+	margin-left: 16px;
+	margin-right: 16px;
+	margin-bottom: 8px;
+
+	@include tablet {
+		width: 151vw;
+		margin-left: 38px;
+		margin-right: 16px;
+		margin-bottom: 16px;
+		min-width: 35vw;
+	}
 }
+
 .footer {
 	background-color: #323232;
 	margin-top: -98px;
+	width: 107vw;
+	background-color: #323232;
+	margin-top: -98px;
+
+	@include tablet {
+		min-width: 127vw;
+		background-color: #323232;
+		margin-top: -98px;
+		height: 40vh;
+	}
 }
+
 .footer__title {
 	@include white;
 	font-family: avenir next;
 	padding-top: 2vh;
 	@include align-left;
+
+	@include tablet {
+		flex-direction: row;
+		font-size: 6vw;
+		position: relative;
+		top: 2.5vh;
+		left: 3.5vh;
+		font-family: "Avenir Next Demi";
+	}
 }
 .footer__social {
 	position: relative;
-	left: 16px;
+	left: 20px;
+
+	@include tablet {
+		display: inline-flex;
+		position: relative;
+		left: 48vw;
+		bottom: 6vw;
+		height: 3vh;
+	}
 }
 .footer__social--icons1,
 .footer__social--icons3 {
 	@include white;
 	width: 8%;
+
+	@include tablet {
+	}
 }
 
 .footer__social--icons2 {
 	width: 5%;
 	margin-left: 8vw;
 	margin-right: 8vw;
+
+	@include tablet {
+		margin-left: 5vw;
+		margin-right: 5vw;
+	}
 }
 
 .footer__contact {
@@ -297,120 +493,238 @@ body {
 	@include align-left;
 	margin: 0;
 	@include font-face;
+
+	@include tablet {
+		padding-top: 0;
+		height: 50vh;
+	}
 }
+
+.footer__contact--left {
+	@include tablet {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
 .footer__contact--info1 {
 	@include white;
 	margin: 0%;
 	font-family: Avenir Next;
+
+	@include tablet {
+	}
 }
 .footer__contact--info1a {
 	@include white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info1b {
 	margin: 0 0 0 0;
 	font-family: Avenir Next;
 	@include white;
+
+	@include tablet {
+	}
 }
 .footer__contact--info2 {
 	@include white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info2a {
 	@include white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info2b {
 	@include white;
 	font-family: Avenir Next;
 	margin: 0vh 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info3 {
 	@include white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
+
+	@include tablet {
+	}
+}
+
+.footer__contact--middle {
+	@include tablet {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		left: 44vw;
+		bottom: 17.5vh;
+	}
 }
 .footer__contact--info4 {
 	@include white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info4a {
 	@include white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info4b {
 	@include white;
 	font-family: Avenir Next;
 	margin: 0 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info5 {
 	@include white;
 	font-family: Avenir Next;
 	margin: 0 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info5a {
 	@include white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info5b {
 	@include white;
 	font-family: Avenir Next;
 	margin: 0 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info6 {
 	@include white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
+
+	@include tablet {
+	}
 }
+
+.footer__contact--right {
+	@include tablet {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		left: 88vw;
+		bottom: 17.5vh;
+	}
+}
+
 .footer__contact--info7 {
 	@include white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info7a {
 	@include white;
 	font-family: Avenir Next;
 	margin: 0 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info7b {
 	@include white;
 	font-family: Avenir Next;
 	margin: 0 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info8 {
 	@include white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info8a {
 	@include white;
 	font-family: Avenir Next;
 	margin: 0 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info8b {
 	@include white;
 	font-family: Avenir Next;
 	margin: 0 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__contact--info {
 	@include white;
 	margin: 3vh 0 0 0;
+
+	@include tablet {
+	}
 }
 .footer__copyright {
 	@include white;
 	padding-bottom: 1vh;
+
+	@include tablet {
+		margin: 0%;
+		padding: 0%;
+	}
 }
 .footer__name {
 	max-height: 20px;
 	max-width: 120px;
 	margin-top: 7vh;
+
+	@include tablet {
+		margin-top: 0;
+		position: absolute;
+		left: 108vw;
+		bottom: -120vh;
+	}
 }
 .copyright__title {
 	@include white;
+
+	@include tablet {
+		position: relative;
+		bottom: 14vh;
+		left: 2vw;
+	}
+}
+
+@include tablet {
 }
