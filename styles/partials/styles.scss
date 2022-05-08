@@ -82,8 +82,17 @@ body {
 
 	@include tablet {
 		display: inline-flex;
-		padding-right: 126vw;
+		padding-right: 225vw;
 		height: 7vh;
+		width: 152vw;
+	}
+	@include desktop {
+		display: inline-flex;
+		padding-right: 239vw;
+		height: 9vh;
+		min-width: 750vw;
+		padding-bottom: 10vh;
+		padding-top: 16vh;
 	}
 }
 
@@ -97,12 +106,25 @@ body {
 	font-family: "Avenir Next";
 
 	@include tablet {
-		display: inline-flex;
-		flex-direction: row;
+		display: flex;
+		font-size: 10vw;
+		min-width: 8vw;
 		position: absolute;
-		left: 4vw;
-		top: 2.5vh;
-		width: 15vw;
+		left: 3vw;
+		top: 2vh;
+		width: 37vw;
+		height: 3vh;
+	}
+
+	@include desktop {
+		display: flex;
+		font-size: 10vw;
+		min-width: 19vw;
+		position: absolute;
+		left: 25vw;
+		top: 6vh;
+		width: 46vw;
+		height: 11vh;
 	}
 }
 
@@ -116,8 +138,8 @@ body {
 	@include tablet {
 		display: inline-flex;
 		position: relative;
-		bottom: 3vh;
-		left: 9vw;
+		bottom: 2.5vh;
+		left: 10vw;
 	}
 }
 
@@ -133,9 +155,26 @@ body {
 
 	@include tablet {
 		display: inline-flex;
-		position: fixed;
-		top: 2.25vh;
-		left: 28vw;
+		position: relative;
+		top: 4.6vh;
+		left: 82vw;
+		font-size: 2.5vw;
+		border-bottom: solid 4px white;
+		max-width: 9vh;
+		padding-bottom: 3%;
+		justify-content: center;
+	}
+	@include desktop {
+		display: inline-flex;
+		position: relative;
+		top: 11.6vh;
+		left: -144vw;
+		font-size: 2.5vw;
+		border-bottom: solid 6px white;
+		max-width: 38vh;
+		padding-bottom: 10%;
+		justify-content: center;
+		font-size: 4.5vw;
 	}
 }
 
@@ -152,8 +191,21 @@ body {
 	@include tablet {
 		display: flex;
 		position: relative;
-		left: 83vw;
-		top: 2.25vh;
+		left: 79vw;
+		top: 4.5vh;
+		font-size: 2.75vw;
+	}
+	@include desktop {
+		display: inline-flex;
+		position: relative;
+		top: 11.6vh;
+		left: -133vw;
+		font-size: 2.5vw;
+		max-width: 38vh;
+		padding-bottom: 10%;
+		justify-content: center;
+		font-size: 4.5vw;
+		opacity: .6;
 	}
 }
 
@@ -189,7 +241,15 @@ body {
 
 	@include tablet {
 		padding-bottom: 40vh;
-		padding-right: 126vw;
+		padding-right: 226vw;
+		height: 58vh;
+	}
+	@include desktop {
+		padding-bottom: 40vh;
+		padding-right: 241vw;
+		height: 156vh;
+		min-width: 1434vh;
+		background-size: inherit;
 	}
 }
 
@@ -213,9 +273,24 @@ body {
 
 	@include tablet {
 		display: flex;
+		font-size: 13vw;
+		min-width: 1000%;
+		position: bottom;
+		position: relative;
+		bottom: 36vh;
+
+		@include desktop {
+			display: flex;
+			font-size: 17vw;
+			min-width: 1000%;
+			position: bottom;
+			position: relative;
+			bottom: 99vh;
+			background-size: inherit;
+			margin-left: 91vw;
+		}
 	}
 }
-
 // .gallery {
 // 	display: flex;
 // 	flex-direction: column;
@@ -279,10 +354,19 @@ body {
 	margin-top: 3vh;
 
 	@include tablet {
-		font-size: 4vw;
-		padding-bottom: 1.25vh;
-		padding-top: 8.5vh;
+		font-size: 9vw;
+		padding-bottom: 0;
+		padding-top: 6.5vh;
 		margin-left: 8vw;
+	}
+
+	@include desktop {
+		font-size: 11vw;
+		padding-bottom: 6vh;
+		padding-top: 0;
+		margin-left: 99vw;
+		white-space: nowrap;
+		margin-top: 0;
 	}
 }
 
@@ -293,10 +377,17 @@ body {
 	margin-right: 16px;
 
 	@include tablet {
-		height: 45vh;
-		width: 83vw;
-		margin-left: 20vw;
-		margin-top: 1vh;
+		height: 46vh;
+		width: 1122%;
+		margin-left: 50vw;
+		margin-top: 3vh;
+	}
+	@include desktop {
+		height: 134vh;
+		width: 2487%;
+		margin-left: 120vw;
+		margin-top: 3vh;
+		min-width: 393%;
 	}
 }
 
@@ -309,9 +400,15 @@ body {
 	margin-left: 19px;
 
 	@include tablet {
-		width: 83vw;
-		margin-left: 20vw;
-		font-size: 3vw;
+		margin-left: 54vw;
+		font-size: 4.8vw;
+		min-width: 97vw;
+	}
+
+	@include desktop {
+		margin-left: 122vw;
+		font-size: 4.8vw;
+		min-width: 142vw;
 	}
 }
 
@@ -323,6 +420,13 @@ body {
 
 	@include tablet {
 		@include about-spacing-tablet;
+		font-size: 4.5vw;
+	}
+
+	@include desktop {
+		width: 128vw;
+		margin-left: 122vw;
+		font-size: 4.5vw;
 	}
 }
 
@@ -330,6 +434,16 @@ body {
 	@include tablet {
 		margin-left: 16px;
 		display: flex;
+		padding-left: 48vw;
+		position: relative;
+		left: 30vw;
+	}
+
+	@include desktop {
+		margin-left: 118vw;
+		display: flex;
+		padding-left: 50vw;
+		position: relative;
 	}
 }
 
@@ -342,11 +456,20 @@ body {
 	@include tablet {
 		display: flex;
 		min-width: -webkit-fill-available;
-		position: relative;
 		left: 17vw;
-		font-size: 2.5vw;
+		font-size: 3.0vw;
+		font-family: 'Avenir Next Demi';
+	}
+	@include desktop {
+		left: -76vw;
+		position: relative;
+		font-size: 3vw;
+		font-family: "Avenir Next Demi";
+		white-space: nowrap;
+		bottom: 3vh;
 	}
 }
+
 .about__texts--box2,
 .about__texts--box1 {
 	margin-left: 22px;
@@ -357,13 +480,18 @@ body {
 
 	@include tablet {
 		display: flex;
-		width: 700vw;
+		width: 900vw;
 		padding: left;
 		position: relative;
 		right: 77vw;
 		top: 4vh;
-		font-size: 2vw;
-		min-width: 40vw;
+		font-size: 3vw;
+		min-width: 50vw;
+	}
+	@include desktop {
+		width: 922vw;
+		top: 7vh;
+		min-width: 71vw;
 	}
 }
 
@@ -374,6 +502,21 @@ body {
 	bottom: 13vh;
 
 	@include tablet {
+		margin-top: 0;
+		padding-top: 0;
+		position: relative;
+		bottom: 13vh;
+		left: 17vw;
+		background-color: #fafafa;
+	}
+
+	@include desktop {
+		margin-top: 0;
+		padding-top: 0;
+		position: relative;
+		bottom: 13vh;
+		background-color: #fafafa;
+		margin-left: 48vw;
 	}
 }
 
@@ -386,9 +529,18 @@ body {
 	margin-left: 5vw;
 
 	@include tablet {
-		font-size: 5vw;
+		font-size: 9.5vw;
 		padding-bottom: 1vh;
 		padding-top: 6vh;
+		margin-left: 2vw;
+	}
+
+	@include desktop {
+		font-size: 9.5vw;
+		padding-bottom: 5vh;
+		padding-top: 12vh;
+		margin-left: 2vw;
+		white-space: nowrap;
 	}
 }
 
@@ -401,7 +553,10 @@ body {
 
 .gallery__row2 {
 	width: 100vw;
-	display: inline-flex;
+
+	@include tablet {
+		display: inline-flex;
+	}
 }
 
 .gallery__row3 {
@@ -419,10 +574,18 @@ body {
 
 	@include tablet {
 		width: 151vw;
-		margin-left: 38px;
+		margin-left: 25px;
 		margin-right: 16px;
 		margin-bottom: 16px;
-		min-width: 35vw;
+		min-width: 60vw;
+	}
+
+	@include desktop {
+		width: 151vw;
+		margin-left: 35px;
+		margin-right: 35px;
+		margin-bottom: 35px;
+		min-width: 93vw;
 	}
 }
 
@@ -434,10 +597,18 @@ body {
 	margin-top: -98px;
 
 	@include tablet {
-		min-width: 127vw;
+		min-width: 226vw;
 		background-color: #323232;
 		margin-top: -98px;
 		height: 40vh;
+		min-height: 53vh;
+	}
+	@include desktop {
+		min-width: 750vw;
+		background-color: #323232;
+		margin-top: -98px;
+		height: 40vh;
+		min-height: 250vh;
 	}
 }
 
@@ -452,8 +623,19 @@ body {
 		font-size: 6vw;
 		position: relative;
 		top: 2.5vh;
-		left: 3.5vh;
+		left: 13.5vh;
 		font-family: "Avenir Next Demi";
+	}
+
+	@include desktop {
+		flex-direction: row;
+		font-size: 9vw;
+		position: relative;
+		top: 18.5vh;
+		left: 129.5vh;
+		font-family: "Avenir Next Demi";
+		white-space: nowrap;
+		padding-bottom: 6vh;
 	}
 }
 .footer__social {
@@ -463,9 +645,16 @@ body {
 	@include tablet {
 		display: inline-flex;
 		position: relative;
-		left: 48vw;
+		left: 75.5vw;
 		bottom: 6vw;
 		height: 3vh;
+	}
+	@include desktop {
+		display: inline-flex;
+		position: relative;
+		left: 138.5vw;
+		bottom: 9.5vw;
+		height: 17vh;
 	}
 }
 .footer__social--icons1,
@@ -474,6 +663,9 @@ body {
 	width: 8%;
 
 	@include tablet {
+	}
+	@include desktop {
+		width: 25%;
 	}
 }
 
@@ -486,6 +678,11 @@ body {
 		margin-left: 5vw;
 		margin-right: 5vw;
 	}
+	@include desktop {
+		margin-left: 12vw;
+		margin-right: 12vw;
+		width: 25%;
+	}
 }
 
 .footer__contact {
@@ -494,41 +691,50 @@ body {
 	margin: 0;
 	@include font-face;
 
-	@include tablet {
-		padding-top: 0;
-		height: 50vh;
-	}
+	// @include desktop {
+	// 	padding-bottom: 2vh;
+	// }
 }
 
 .footer__contact--left {
 	@include tablet {
+		padding-top: 0;
 		display: flex;
 		flex-direction: column;
+		position: relative;
+		left: 18vw;
+	}
+	@include desktop {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		left: 68vw;
 	}
 }
 
-.footer__contact--info1 {
-	@include white;
-	margin: 0%;
-	font-family: Avenir Next;
-
-	@include tablet {
-	}
-}
 .footer__contact--info1a {
 	@include white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
 
 	@include tablet {
+		margin-top: 0px;
+		padding-top: 0px;
+		position: relative;
+		top: 2.5vh;
 	}
 }
 .footer__contact--info1b {
 	margin: 0 0 0 0;
 	font-family: Avenir Next;
-	@include white;
+	color: white;
+	white-space: nowrap;
 
 	@include tablet {
+		margin-top: 0px;
+		padding-top: 0px;
+		position: relative;
+		top: 2.5vh;
 	}
 }
 .footer__contact--info2 {
@@ -569,8 +775,15 @@ body {
 		display: flex;
 		flex-direction: column;
 		position: absolute;
-		left: 44vw;
-		bottom: 17.5vh;
+		left: 84vw;
+		bottom: 22.5vh;
+	}
+	@include desktop {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		left: 164vw;
+		bottom: 48vh;
 	}
 }
 .footer__contact--info4 {
@@ -635,8 +848,16 @@ body {
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		left: 88vw;
-		bottom: 17.5vh;
+		left: 149vw;
+		bottom: 20.5vh;
+	}
+
+	@include desktop {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		left: 259vw;
+		bottom: 96vh;
 	}
 }
 
@@ -646,6 +867,7 @@ body {
 	margin: 3vh 0 0 0;
 
 	@include tablet {
+		font-size: 3vw;
 	}
 }
 .footer__contact--info7a {
@@ -695,6 +917,28 @@ body {
 	@include tablet {
 	}
 }
+
+.footer__contact--info1a,
+.footer__contact--info1b,
+.footer__contact--info2a,
+.footer__contact--info2b,
+.footer__contact--info3,
+.footer__contact--info4a,
+.footer__contact--info4b,
+.footer__contact--info5a,
+.footer__contact--info5b,
+.footer__contact--info6,
+.footer__contact--info7,
+.footer__contact--info7a,
+.footer__contact--info7b,
+.footer__contact--info8a,
+.footer__contact--info8b,
+.footer__contact--info9 {
+	@include tablet {
+		font-size: 3vw;
+	}
+}
+
 .footer__copyright {
 	@include white;
 	padding-bottom: 1vh;
@@ -711,11 +955,24 @@ body {
 
 	@include tablet {
 		margin-top: 0;
-		position: absolute;
-		left: 108vw;
-		bottom: -120vh;
+		position: relative;
+		left: 156vw;
+		top: -52vh;
+		min-width: 100%;
+		width: 28vw;
+		min-height: 3vh;
+	}
+	@include desktop {
+		margin-top: 0;
+		position: relative;
+		left: 319vw;
+		top: -175vh;
+		min-width: 100%;
+		width: 28vw;
+		min-height: 11vh;
 	}
 }
+
 .copyright__title {
 	@include white;
 
@@ -724,7 +981,12 @@ body {
 		bottom: 14vh;
 		left: 2vw;
 	}
-}
 
-@include tablet {
+	@include desktop {
+		position: relative;
+		bottom: 41vh;
+		left: 67vw;
+		font-size: 5vw;
+		white-space: nowrap;
+	}
 }
