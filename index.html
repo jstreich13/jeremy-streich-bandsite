@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Band Site</title>
-    <link rel="stylesheet" href="./styles/partials/styles.css">
+    <link rel="stylesheet" href="./styles/bio.css">
 </head>
 
 <body>
@@ -89,6 +89,30 @@
             </div>
         </section>
 
+        <section class="comments">
+            <h1 class="comments__title">Join the Conversation</h1>
+            <form class="form">
+                <div class="form__container">
+                    <div class="form__group">
+                        <img class="form__image" src="./Assets/Images/Mohan-muruge.jpg" .>
+                        <div class="form__fields">
+                            <label class="form__label" for="name">NAME</label>
+                            <input class="form__input--name" id="name" name="name" type="text"
+                                placeholder="Enter your name">
+                            <label class="form__label" for="comments">COMMENT</label>
+                            <input class="form__input--comment" id="comments" name="comments" type="text"
+                                placeholder="Add a new comment" required>
+                            <button type="submit" class="form__button">COMMENT</button>
+                        </div>
+
+                    </div>
+            </form>
+            <article class="comments__list" id="comments__list"></article>
+
+
+        </section>
+
+
     </main>
 
     <footer class="footer">
@@ -142,6 +166,7 @@
     </footer>
 
 
+    <script src="./scripts/index-page.js"></script>
 </body>
 
 </html>

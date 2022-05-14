@@ -1,20 +1,23 @@
-@use './variables' as *;
-@use './mixins' as *;
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
 
 html {
 	box-sizing: border-box;
 	scroll-behavior: smooth;
 	margin: 0;
+	@include tablet {
+		// min-width: 768px;
+		// max-width: 1280px;
+	}
+	@include desktop {
+		// min-width: fit-content;
+	}
 }
 html,
 body {
 	margin: 0;
 	margin-right: 0%;
-}
-* {
-	max-width: 768px;
-	box-sizing: inherit;
-	width: 100vw;
+	overflow-x: hidden
 }
 
 // @font-face{
@@ -66,43 +69,45 @@ body {
 	padding-right: 20px;
 	max-width: 767px;
 	margin: 0;
+
+	@include tablet {
+		max-width: 1279px;
+	}
+	@include desktop {
+		max-width: 1999px;
+	}
 }
 
 .header {
 	background-color: #323232;
 	max-width: 768px;
 	display: flex;
-	padding-top: 1.5vh;
-	padding-bottom: 2vh;
-	height: 13vh;
-	margin-left: 0px;
-	margin-right: auto;
-	justify-content: center;
-	width: 107vw;
+	justify-content: start;
+	width: 100%;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 2vh;
 
-	@include tablet {
-		display: inline-flex;
-		padding-right: 225vw;
-		height: 7vh;
-		width: 152vw;
-	}
-	@include desktop {
-		display: inline-flex;
-		padding-right: 239vw;
-		height: 9vh;
-		min-width: 750vw;
-		padding-bottom: 10vh;
-		padding-top: 16vh;
-	}
+
+@include tablet {
+	display: inline-flex;
+	padding-right: 225vw;
+	height: 7vh;
+	width: 152vw;
 }
+@include desktop {
+	display: inline-flex;
+	padding-right: 239vw;
+	height: 9vh;
+	min-width: 750vw;
+	padding-bottom: 10vh;
+	padding-top: 16vh;
+}}
 
 .header__name {
-	top: 2.5vh;
 	color: white;
 	margin: 0%;
-	position: absolute;
-	max-width: 37%;
-	right: 31vw;
+	width: 30vw;
 	font-family: "Avenir Next";
 
 	@include tablet {
@@ -130,10 +135,9 @@ body {
 
 .header__nav {
 	display: flex;
-	align-self: end;
 	font-size: 14px;
 	position: relative;
-	left: 7vw;
+	top: 1.25vh;
 
 	@include tablet {
 		display: inline-flex;
@@ -145,13 +149,14 @@ body {
 
 .header__nav--items1 {
 	color: white;
-	margin: 0px 118px 0px -13px;
 	font-family: Avenir Next;
-	right: -12vw;
-	position: relative;
 	font-weight: 400;
-	top: 0.5vh;
 	font-size: 18px;
+	display: flex;
+	flex-direction: row;
+	margin-right: 21vw;
+	border-bottom: solid 3px #fafafa;
+	margin-top: -1vw;
 
 	@include tablet {
 		display: inline-flex;
@@ -179,34 +184,34 @@ body {
 }
 
 .header__nav--items2 {
-	color: white;
-	margin: 0px 118px 0px -13px;
+	color: darkgray;
 	font-family: Avenir Next;
-	right: -12vw;
-	position: relative;
 	font-weight: 400;
-	top: 0.5vh;
 	font-size: 18px;
+	display: flex;
+	flex-direction: row;
+	margin-top: -1vw;
 
-	@include tablet {
-		display: flex;
-		position: relative;
-		left: 79vw;
-		top: 4.5vh;
-		font-size: 2.75vw;
-	}
-	@include desktop {
-		display: inline-flex;
-		position: relative;
-		top: 11.6vh;
-		left: -133vw;
-		font-size: 2.5vw;
-		max-width: 38vh;
-		padding-bottom: 10%;
-		justify-content: center;
-		font-size: 4.5vw;
-		opacity: .6;
-	}
+
+@include tablet {
+	display: flex;
+	position: relative;
+	left: 79vw;
+	top: 4.5vh;
+	font-size: 2.75vw;
+}
+@include desktop {
+	display: inline-flex;
+	position: relative;
+	top: 11.6vh;
+	left: -133vw;
+	font-size: 2.5vw;
+	max-width: 38vh;
+	padding-bottom: 10%;
+	justify-content: center;
+	font-size: 4.5vw;
+	opacity: .6;
+}
 }
 
 // .hero {
@@ -231,7 +236,7 @@ body {
 	margin-top: -12px;
 	position: relative;
 	top: 13px;
-	width: 107vw;
+	width: 100%;
 	background-image: url(../../Assets/Images/hero-bio.jpg);
 	height: 40vh;
 	background-size: cover;
@@ -286,72 +291,29 @@ body {
 			position: bottom;
 			position: relative;
 			bottom: 99vh;
-			background-size: inherit;
 			margin-left: 91vw;
 		}
 	}
 }
-// .gallery {
-// 	display: flex;
-// 	flex-direction: column;
-// 	margin: 0 20px;
-
-// 	@include tablet {
-// 		flex-direction: row;
-// 		flex-wrap: wrap;
-// 		justify-content: space-evenly;
-// 		align-content: space-evenly;
-
-// 		&__item {
-// 			text-align: center;
-// 			background: lightblue;
-// 			margin: 20px 0;
-// 			padding: 20px 0;
-// 			font-size: 5rem;
-// 			border: radius 5px;
-// 			transition: background 1s;
-// 		}
-// 	}
-// }
-
-// @include tablet {
-// 	.gallery {
-// 		width: 40%;
-// 		margin: 3vw 0;
-// 		background: lightgreen;
-// 	}
-// }
-
-// @include desktop {
-// 	.gallery {
-// 		&__item {
-// 			width: 30%;
-// 			margin: 1.25vw 0;
-// 			background: lightpink;
-// 		}
-// 	}
-// }
 
 .about {
 	width: 104vw;
-	position: relative;
-	top: -14vh;
+    padding-top: 0px;
+    margin-top: 0px;
 
 	@include tablet {
 	}
 }
 
 .about__title {
-	margin-bottom: 0px;
-	margin-left: 20px;
-	font-family: "Avenir Next Demi";
-	font-weight: 6px;
-	font-size: 8vw;
-	padding-top: 9vh;
-	padding-bottom: 2vh;
-	color: #323232;
-	padding-top: 11vh;
-	margin-top: 3vh;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    font-family: "Avenir Next Demi";
+    font-weight: 6px;
+    font-size: 8vw;
+
+    padding-bottom: 2vh;
+    color: #323232;
 
 	@include tablet {
 		font-size: 9vw;
@@ -371,10 +333,10 @@ body {
 }
 
 .about__image {
-	max-width: 100vw;
-	width: 99vw;
-	margin-left: 16px;
-	margin-right: 16px;
+	max-width: 100%;
+	width: 97vw;
+	margin-left: 8px;
+	
 
 	@include tablet {
 		height: 46vh;
@@ -396,7 +358,7 @@ body {
 	font-family: "Avenir Next Demi";
 	color: black;
 	font-weight: inherit;
-	width: 107vw;
+	width: 90%;
 	margin-left: 19px;
 
 	@include tablet {
@@ -431,16 +393,11 @@ body {
 }
 
 .about__texts {
-	@include tablet {
-		margin-left: 16px;
-		display: flex;
-		padding-left: 48vw;
-		position: relative;
-		left: 30vw;
-	}
+	margin-left: 16px;
+	padding-left: 27vw;
+	display: contents;
 
 	@include desktop {
-		margin-left: 118vw;
 		display: flex;
 		padding-left: 50vw;
 		position: relative;
@@ -456,9 +413,9 @@ body {
 	@include tablet {
 		display: flex;
 		min-width: -webkit-fill-available;
-		left: 17vw;
-		font-size: 3.0vw;
-		font-family: 'Avenir Next Demi';
+		font-size: 3vw;
+		font-family: "Avenir Next Demi";
+		JUSTIFY-CONTENT: start;
 	}
 	@include desktop {
 		left: -76vw;
@@ -497,17 +454,16 @@ body {
 
 .gallery {
 	margin-top: 0;
-	padding-top: 0;
-	position: relative;
-	bottom: 13vh;
+	padding-top: 2vh;
+
 
 	@include tablet {
 		margin-top: 0;
 		padding-top: 0;
 		position: relative;
 		bottom: 13vh;
-		left: 17vw;
 		background-color: #fafafa;
+		margin-left: 6%;
 	}
 
 	@include desktop {
@@ -552,7 +508,7 @@ body {
 }
 
 .gallery__row2 {
-	width: 100vw;
+	width: 100%;
 
 	@include tablet {
 		display: inline-flex;
@@ -561,14 +517,14 @@ body {
 
 .gallery__row3 {
 	@include tablet {
-		width: 100vw;
+		width: 100%;
 		display: inline-flex;
 	}
 }
 
 .gallery__image {
 	width: 97vw;
-	margin-left: 16px;
+	margin-left: 8px;
 	margin-right: 16px;
 	margin-bottom: 8px;
 
@@ -589,10 +545,111 @@ body {
 	}
 }
 
+.comments{     
+	display: table;
+	height: 120vh;
+
+	&__title{
+		font-family: Avenir Next Demi;
+		font-size: 7vw;
+		margin-left: 16px;
+	}
+	&__avatar{
+		max-width: 10vw;
+		max-height: 10vh;
+
+	}
+	&__name-label{
+		font-size: 3vw;
+		color: #323232;
+
+	}
+	&__entry-label{
+
+	}
+	&__entry-input{
+
+}
+&__button{
+
+}
+
+}
+
+.commenter__avatar{
+	background-image: url(../Assets/Images/Mohan-muruge.jpg);
+	width: 10vw;
+}
+
+.form {
+	display: table;
+
+	&__image{
+		border-radius: 50%;
+		width: 17%;
+		display: flex;
+    position: absolute;
+	}
+
+&__container {
+	display: table;
+}
+&__group {
+	display: table;
+}
+&__fields {
+	margin-left: 20vw;
+    margin-bottom: 5v;
+    width: 80vw;
+}
+&__label {
+	display: flex;
+    flex-direction: column;
+    font-family: 'Avenir Next';
+}
+&__input--name {
+	width: 75%;
+    padding: 1vh;
+    margin-bottom: 2vh;
+    font-family: 'Avenir Next';
+    color: black;
+    background-color:#fafafa;
+    border:dimgray 1px solid;
+	
+}
+
+&__input--comment {
+	
+    width: 75%;
+    margin-bottom: 2vh;
+    font-family: "Avenir Next";
+    color: black;
+    background-color: #fafafa;
+    border: 3px black;
+    /* text-align: start; */
+    padding-top: 1vh;
+    padding-bottom: 6vh;
+    display: flex;
+    padding-left: 2vw;
+	border:dimgray 1px solid;
+
+}
+&__button {
+	display: table;
+}
+&__list {
+	display: table;
+}
+}
+
+.comments__list{
+
+}
+
 .footer {
 	background-color: #323232;
 	margin-top: -98px;
-	width: 107vw;
+	width: 100%;
 	background-color: #323232;
 	margin-top: -98px;
 
