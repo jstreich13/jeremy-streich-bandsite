@@ -30,6 +30,7 @@ const user = {
 	],
   };
 
+// function commentCreation() {
 
   for (i = 0; i < user.comment.length; i++) {
 
@@ -40,131 +41,50 @@ const user = {
 	let commenterAvatar = document.createElement("figure");
 	commenterAvatar.classList.add("commenter__avatar");
 	oneCommentContainer.appendChild(commenterAvatar);
-  
-  ////===Attempting to add the images for each commenter breaks the flow of the rest of the appendChilds
-//     let commenterAvatar = document.createElement("figure");
-//     commenterAvatar.setAttribute("id", "myFigure");
-//     document.oneCommentContainer.appendChild(commenterAvatar);
-
-// 	let commenterAvatarHolder = document.createElement("img");
-//    commenterAvatarHolder("src", "./Assets/Images/Mohan-muruge.jpg");
-//    commenterAvatarHolder("width", "300");
-//    commenterAvatarHolder("width", "200");
-//    commenterAvatarHolder("alt", "an image");
-// 	document.commenterAvatar.appendChild(commenterAvatarHolder);
 
 	let commentHolder = document.createElement("div");
-	commentHolder.classList.add("comment__copy");
+	commentHolder.classList.add("comments__holder");
 	oneCommentContainer.appendChild(commentHolder);
-  
+
 	let userName = document.createElement("p");
 	userName.classList.add("text--demi");
 	userName.innerText = user.comment[i].name;
 	commentHolder.appendChild(userName);
-  
-
+	
+	
 	let datePosted = document.createElement("p");
 	datePosted.classList.add("date--text");
 	datePosted.innerText = user.comment[i].date;
 	commentHolder.appendChild(datePosted);
-
+	
 	let commentCopy = document.createElement("p");
+	commentCopy.classList.add("comments__copy")
 	commentCopy.innerText = user.comment[i].content;
 	commentHolder.appendChild(commentCopy);
-  
+	
   }
 
 
 
-// const commentSection = document.querySelector(".comments");
-// // const testContainer = document.createElement('div');
-// // commentSection.appendChild(testContainer);
+  //===== I've commented this section out and will have it fixed for Sprint 3. When active, this
+  //===== section and the naming of the function causes all of the above to disappear. Will troubleshoot this week.
 
-// let commenterId = document.createElement('img');
-// commenterId.setAttribute('src', '../Assets/Images/Mohan-muruge.jpg') 
-// commenterId.setAttribute('alt','commenter')
-// commenterId.classList.add('comments__avatar')
-// commentSection.appendChild(commenterId)
-
-// let commenterName = document.createElement("label");
-// commenterName.setAttribute("for",commenterName);
-// commenterName.innerHTML = "Name";
-// commenterName.classList.add('comments__name-label')
-// commenterId.appendChild(commenterName)
-
-// let commenterNameEntry = document.createElement("input");
-// commenterNameEntry.setAttribute("type", "text");
-// commenterNameEntry.setAttribute("name", "commenterNameEntry");
-// commenterNameEntry.setAttribute("placeholder", "Enter your name");
-// commenterNameEntry.classList.add('comments__name-input')
-// commenterName.appendChild(commenterNameEntry)    
-
-// let commentEntryLabel = document.createElement("label");
-// commentEntryLabel.setAttribute("for","commentEntryLabel");
-// commentEntryLabel.innerHTML = "Comment";
-// commentEntryLabel.classList.add('comments__entry-label')
-// commenterNameEntry.appendChild(commentEntryLabel)
-
-// let commentEntry = document.createElement("input");
-// commentEntry.setAttribute("type", "text");
-// commentEntry.setAttribute("name", "commentEntry");
-// commentEntry.setAttribute("placeholder", "Add a new comment");
-// commentEntry.classList.add('comments__entry-input')
-// commentEntryLabel.appendChild(commentEntry);
-
-// let commentButton = document.createElement("input");
-//     commentButton.setAttribute("type", "submit");
-//     commentButton.setAttribute("value", "Submit");
-//     commentButton.classList.add('comments__button')
-// 	commentEntryLabel.appendChild(commentButton)
-
-
-
-
-
-// function showError(input, message) {
-// 	return showMessage(input, message, false);
+// let form = document.querySelector("form")
+// form.addEventListener("submit", (ev) => {
+// 	ev.preventDefault();
+// 	let newUserName = ev.target.name.value
+// 	let newCommentCopy = ev.target.content.value
+// 	let today = new Date();
+// 	let todaysDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+// 	let newComment = {
+// 		name: newUserName,
+// 		date: todaysDate,
+// 		content: newCommentCopy,
+// 		image: "",
 // }
 
-// function showSuccess(input) {
-// 	return showMessage(input, "", true);
-// }
-
-// function hasValue(input, message) {
-// 	if (input.value.trim() === "") {
-// 		return showError(input, message);
-// 	}
-// 	return showSuccess(input);
-// }
-
-// const nameNeeded = "Please enter your name";
-
-// form.addEventListener("submit", function (event) {
-// 	// stop form submission
-// 	event.preventDefault();
-
-// 	// validate the form
-// 	let nameWorks = hasValue(form.elements["name"], nameNeeded);
-
-// }
-
-// const heroTitle = document.createElement('h1');
-// heroTitle.innerText = 'Week 4 Review: DOM';
-// heroTitle.classList.add('hero__title')
-
-// console.log(heroTitle)
-
-// let heroImage = document.createElement('img');
-// heroImage.setAttribute('src', '/assets/images/toronto.jpg')
-// heroImage.setAttribute('alt', 'Skyline of Toronto')
-// heroImage.classList.add('hero__image');
-
-// console.log(heroImage)
-
-// let hero = document.createElement('section');
-// hero.classList.add('hero');
-
-// hero.appendChild(heroTitle);
-// hero.appendChild(heroImage);
-
-// document.body.appendChild(hero)
+// user.unshift(newComment);
+// commentsWrapper.innterHTML = null;
+// commentCreation();
+// form.reset();
+// )};

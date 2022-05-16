@@ -1,0 +1,598 @@
+// @use './partials/variables' as *;
+// @use './partials/mixins' as *;
+
+
+// // html {
+// // 	box-sizing: border-box;
+// // 	scroll-behavior: smooth;
+// // 	margin: 0;
+// // 	@include tablet {
+// // 		// min-width: 768px;
+// // 	}
+// // 	@include desktop {
+// // 		// min-width: fit-content;
+// // 	}
+// // }
+// // html,
+// // body {
+// // 	margin: 0;
+// // 	margin-right: 0%;
+// // 	overflow-x: hidden
+// // }
+
+// // // @font-face{
+// // //     font-family: 'Avenir Next';
+// // //     src: url(../.././Assets/Font/AvenirNextLTPro-Regular.otf);
+
+// // // }
+
+// // @include font-face;
+
+// // // @font-face {
+// // // 	font-family: 'Avenir Next Bold' face;
+// // // 	src: url(../../Assets/Font/AvenirNextLTPro-Bold.otf);
+
+// // @font-face {
+// // 	font-family: 'Avenir Next Demi';
+// // 	src: url(../../Assets/Font/AvenirNextLTPro-Demi.otf);
+// // }
+
+// // @font-face {
+// // 	font-family: 'Avenir Next';
+// // 	src: url(../.././Assets/Font/AvenirNextLTPro-Regular.otf);
+// // }
+
+// // .h1 {
+// // 	font-size: 24px;
+// // 	line-height: 32px;
+// // 	font-weight: 700;
+// // }
+// // .h2 {
+// // 	font-size: 14px;
+// // 	line-height: 22px;
+// // 	font-weight: 600;
+// // }
+
+// // .p {
+// // 	font-size: 13px;
+// // 	line-height: 18px;
+// // 	font-weight: 400;
+// // 	color: #323232;
+// // }
+
+// // .main {
+// // 	@include marg;
+// // }
+
+// // .body {
+// // 	padding-left: 20px;
+// // 	padding-right: 20px;
+// // 	max-width: 767px;
+// // 	margin: 0;
+
+// // 	@include tablet {
+// // 		max-width: 1279px;
+// // 	}
+// // 	@include desktop {
+// // 		max-width: 1999px;
+// // 	}
+// // }
+
+// // .header {
+// // 	background-color: #323232;
+// // 	max-width: 768px;
+// // 	display: flex;
+// // 	justify-content: start;
+// // 	width: 100%;
+// // 	align-items: center;
+// // 	flex-direction: column;
+// // 	padding-top: 2vh;
+
+
+// // @include tablet {
+// // 	display: inline-flex;
+// // 	padding-right: 225vw;
+// // 	height: 7vh;
+// // 	width: 152vw;
+// // }
+// // @include desktop {
+
+// // }
+
+// // &__name {
+// // 	color: white;
+// // 	margin: 0%;
+// // 	width: 30vw;
+// // 	font-family: "Avenir Next";
+
+// // 	@include tablet {
+// // 		display: flex;
+// //     font-size: 10vw;
+// //     position: absolute;
+// //     width: 37vw;
+// //     height: 3vh;
+// //     margin-left: 0ox;
+// //     align-self: start;
+// // 	}
+
+// // 	@include desktop {
+// // 		display: flex;
+// // 		// font-size: 10vw;
+// // 		// min-width: 19vw;
+// // 		// position: absolute;
+// // 		// left: 25vw;
+// // 		// top: 6vh;
+// // 		// width: 46vw;
+// // 		// height: 11vh;
+// // 	}
+// // }
+// // &__nav{
+// // 	display: flex;
+// // 	font-size: 14px;
+// // 	position: relative;
+// // 	top: 1.25vh;
+
+// // 	@include tablet {
+// // 		height: 8vh;
+// // 		display: inline-flex;
+// // 		align-self: center;
+// // 		width: 68%;
+// // 		margin-left: 54%;
+// // 	}
+// // 	@include desktop{
+// // 		height: 8vh;
+// // 		display: inline-flex;
+// // 		align-self: center;
+// // 		width: 115%;
+// // 		margin-left: 142%;
+// // 	}
+// // }
+
+// // &__nav--items1 {
+// // 	color: white;
+// // 	font-family: Avenir Next;
+// // 	font-weight: 400;
+// // 	font-size: 18px;
+// // 	display: flex;
+// // 	flex-direction: row;
+// // 	margin-right: 21vw;
+// // 	border-bottom: solid 3px #fafafa;
+// // 	margin-top: -1vw;
+
+// // 	@include tablet {
+// // 		font-size: 2.5vw;
+// //     border-bottom: solid 4px white;
+// //     width: 20%;
+// // 	}
+// // 	@include desktop {
+// // 	    display: inline-flex;
+// //     padding-bottom: 6vh;
+// // 	border-bottom: solid 4px white;
+// // }
+// // }
+
+// // &__nav--items2 {
+// // 	color: darkgray;
+// // 	font-family: Avenir Next;
+// // 	font-weight: 400;
+// // 	font-size: 18px;
+// // 	display: flex;
+// // 	flex-direction: row;
+// // 	margin-top: -1vw;
+
+
+// // @include tablet {
+// // 	display: flex;
+// //     font-size: 2.75vw;
+// //     margin-left: -17%;
+// // }
+// // @include desktop {
+// // 	display: inline-flex;
+// //     margin-left: -23%;
+// //     justify-content: center;
+// // }
+// // }
+// // }
+
+
+
+// .footer {
+// 	background-color: #323232;
+// 	margin-top: -98px;
+// 	width: 100%;
+// 	background-color: #323232;
+// 	margin-top: -98px;
+
+// 	@include tablet {
+// 		width: 100%;
+// 		background-color: #323232;
+// 		margin-top: -98px;
+// 		max-height: 40vh;
+
+// 	}
+// 	@include desktop {
+// 		min-width: 750vw;
+// 		background-color: #323232;
+// 		margin-top: -98px;
+// 		height: 40vh;
+// 		min-height: 250vh;
+// 	}
+// }
+
+// .footer__title {
+// 	@include white;
+// 	font-family: avenir next;
+// 	padding-top: 2vh;
+// 	@include align-left;
+
+// 	@include tablet {
+// 	    flex-direction: row;
+//     font-size: 5vw;
+//     position: relative;
+//     top: 0.5vh;
+//     left: 2.5vh;
+//     font-family: "Avenir Next Demi";}
+
+// 	@include desktop {
+// 		flex-direction: row;
+// 		font-size: 9vw;
+// 		position: relative;
+// 		top: 18.5vh;
+// 		left: 129.5vh;
+// 		font-family: "Avenir Next Demi";
+// 		white-space: nowrap;
+// 		padding-bottom: 6vh;
+// 	}
+// }
+// .footer__social {
+// 	position: relative;
+// 	left: 20px;
+
+// 	@include tablet {
+// 	    display: inline-flex;
+//     position: relative;
+//     left: 38.5vw;
+//     bottom: 15vw;
+//     height: 13vh;}
+
+	
+// 	@include desktop {
+// 		display: inline-flex;
+// 		position: relative;
+// 		left: 138.5vw;
+// 		bottom: 9.5vw;
+// 		height: 17vh;
+// 	}
+// }
+// .footer__social--icons1,
+// .footer__social--icons3 {
+// 	@include white;
+// 	width: 8%;
+
+// 	@include tablet {
+// 		width: 7%;
+// 	}
+// 	@include desktop {
+// 		width: 25%;
+// 	}
+// }
+
+// .footer__social--icons2 {
+// 	width: 4%;
+// 	margin-left: 8vw;
+// 	margin-right: 8vw;
+
+// 	@include tablet {
+// 		margin-left: 5vw;
+// 		margin-right: 5vw;
+// 	}
+// 	@include desktop {
+// 		margin-left: 12vw;
+// 		margin-right: 12vw;
+// 		width: 25%;
+// 	}
+// }
+
+// .footer__contact {
+// 	@include white;
+// 	@include align-left;
+// 	margin: 0;
+// 	@include font-face;
+
+
+// }
+
+// .footer__contact--left {
+// 	@include tablet {
+// 	    padding-top: 0;
+//     display: flex;
+//     flex-direction: column;
+//     position: relative;
+//     left: 2vw;
+//     bottom: 10vh;
+// 	}
+// 	@include desktop {
+// 		display: flex;
+// 		flex-direction: column;
+// 		position: relative;
+// 		left: 68vw;
+// 	}
+// }
+
+// .footer__contact--info1a {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 3vh 0 0 0;
+
+// 	@include tablet {
+// 		margin-top: 0px;
+// 		padding-top: 0px;
+// 		position: relative;
+// 		top: 2.5vh;
+// 	}
+// }
+// .footer__contact--info1b {
+// 	margin: 0 0 0 0;
+// 	font-family: Avenir Next;
+// 	color: white;
+// 	white-space: nowrap;
+
+// 	@include tablet {
+// 		margin-top: 0px;
+// 		padding-top: 0px;
+// 		position: relative;
+// 		top: 2.5vh;
+// 	}
+// }
+// .footer__contact--info2 {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 3vh 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info2a {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 3vh 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info2b {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 0vh 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info3 {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 3vh 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+
+// .footer__contact--middle {
+// 	@include tablet {
+// 		display: flex;
+// 		flex-direction: column;
+// 		position: absolute;
+// 		left: 36vw;
+// 		bottom: 27.5vh;
+// 	}
+// 	@include desktop {
+// 		display: flex;
+// 		flex-direction: column;
+// 		position: relative;
+// 		left: 164vw;
+// 		bottom: 48vh;
+// 	}
+// }
+// .footer__contact--info4 {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 3vh 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info4a {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 3vh 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info4b {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 0 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info5 {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 0 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info5a {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 3vh 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info5b {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 0 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info6 {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 3vh 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+
+// .footer__contact--right {
+// 	@include tablet {
+// 	    display: flex;
+//     flex-direction: column;
+//     position: relative;
+//     left: 68vw;
+//     bottom: 26.5vh;
+// 	}
+
+// 	@include desktop {
+// 		display: flex;
+// 		flex-direction: column;
+// 		position: relative;
+// 		left: 259vw;
+// 		bottom: 96vh;
+// 	}
+// }
+
+// .footer__contact--info7 {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 3vh 0 0 0;
+
+// 	@include tablet {
+// 		font-size: 3vw;
+// 	}
+// }
+// .footer__contact--info7a {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 0 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info7b {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 0 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info8 {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 3vh 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info8a {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 0 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info8b {
+// 	@include white;
+// 	font-family: Avenir Next;
+// 	margin: 0 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+// .footer__contact--info {
+// 	@include white;
+// 	margin: 3vh 0 0 0;
+
+// 	@include tablet {
+// 	}
+// }
+
+// .footer__contact--info1a,
+// .footer__contact--info1b,
+// .footer__contact--info2a,
+// .footer__contact--info2b,
+// .footer__contact--info3,
+// .footer__contact--info4a,
+// .footer__contact--info4b,
+// .footer__contact--info5a,
+// .footer__contact--info5b,
+// .footer__contact--info6,
+// .footer__contact--info7,
+// .footer__contact--info7a,
+// .footer__contact--info7b,
+// .footer__contact--info8a,
+// .footer__contact--info8b,
+// .footer__contact--info9 {
+// 	@include tablet {
+// 		font-size: 2vw;
+// 	}
+// }
+
+// .footer__copyright {
+// 	@include white;
+// 	padding-bottom: 1vh;
+
+// 	@include tablet {
+// 		margin: 0%;
+// 		padding: 0%;
+// 	}
+// }
+// .footer__name {
+// 	max-height: 20px;
+// 	max-width: 120px;
+// 	margin-top: 7vh;
+
+// 	@include tablet {
+// 	    margin-top: 0;
+//     position: relative;
+//     left: 83vw;
+//     top: -55vh;
+//     width: 17vw;
+//     min-height: 3vh;
+// 	}
+// 	@include desktop {
+// 		margin-top: 0;
+// 		position: relative;
+// 		left: 319vw;
+// 		top: -175vh;
+// 		min-width: 100%;
+// 		width: 28vw;
+// 		min-height: 11vh;
+// 	}
+// }
+
+// .copyright__title {
+// 	@include white;
+
+// 	@include tablet {
+// 		position: relative;
+//     bottom: 26vh;
+//     left: 4vw;
+// 	}
+
+// 	@include desktop {
+// 		position: relative;
+// 		bottom: 41vh;
+// 		left: 67vw;
+// 		font-size: 5vw;
+// 		white-space: nowrap;
+// 	}
+// }

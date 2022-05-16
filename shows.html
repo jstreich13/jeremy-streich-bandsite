@@ -6,18 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Band Shows</title>
-    <!-- <link rel="stylesheet" href="./styles/shows.css"> -->
+    <link rel="stylesheet" href="./styles/shows.css">
+    <link rel="stylesheet" href="./styles/partials/_global.css">
 </head>
 
 <body>
 
     <body>
-
         <header class="header">
-            <img class="header__name" src="./Assets/Logo/Logo-bandsite.svg" alt="bandsite-logo" />
+            <a href="">
+                <img class="header__name" src="./Assets/Logo/Logo-bandsite.svg" alt="bandsite-logo" /></a>
             <nav class="header__nav">
-                <h2 class="header__nav--items1">Biography</h2>
-                <h2 class="header__nav--items2">Shows</h2>
+                <a href="./index.html">
+                    <h2 class="header__nav--items1">Biography</h2>
+                </a>
+                <a href="./shows.html">
+                    <h2 class="header__nav--items2">Shows</h2>
+                </a>
             </nav>
         </header>
 
@@ -25,13 +30,11 @@
             <div class="hero">
                 <div class="hero__image">
                     <h3 class="hero__image-subtitle">Beautiful Beasts Album</h3>
-
-                    <h1 class="song__name">Queen of Yellow x For the Stings</h1>
-                    <img class="song__player" src="" alt="audio-player" />
+                    <h1 class="hero__title">Queen of Yellow x For the Stings</h1>
+                    <iframe class="hero__song--iframe" width="100%" height="100" scrolling="no" frameborder="no"
+                        allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/258752097&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
                 </div>
-                <iframe class="song__player-iframe" width="100%" height="100" scrolling="no" frameborder="no"
-                    allow="autoplay"
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/258752097&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
                 <!-- <div
                     style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
                     <a href="https://soundcloud.com/dotan-negrin" title="DotanNegrin" target="_blank"
@@ -41,74 +44,67 @@
                         style="color: #cccccc; text-decoration: none;">Pure Imagination- Dotan Negrin and Prismatic
                         mantis (Future James Remix)</a>
                 </div> -->
-            </div>
-            </div>
+                <div class="shows">
+                    <h1 class="shows__header">Shows</h1>
 
-            <div class="shows">
-
-            </div>
-
-            <!-- //  < section class="shows" >
-            //     <h1 class="shows__title">Shows</h1>
-            //     <div class="shows__info">
-            //         <p class="shows__info--detail-headings">DATE</p>
-            //         <p class="shows__info-details">Mon Sept 06 2021</p>
-            //         <p class="shows__info--detail-headings">VENUE</p>
-            //         <p class="shows__info-details">Ronald Lane</p>
-            //         <p class="shows__info--detail-headings">LOCATION</p>
-            //         <p class="shows__info-details">San Francisco, CA</p>
-            //         <a class="shows__ticket-button" href="">BUY TICKETS</a>
-            //     </div>
-            //     <div class="shows__info">
-            //         <p class="shows__info--detail-headings">DATE</p>
-            //         <p class="shows__info-details">Tue Sept 21 2021</p>
-            //         <p class="shows__info--detail-headings">VENUE</p>
-            //         <p class="shows__info-details">Pier 3 East</p>
-            //         <p class="shows__info--detail-headings">LOCATION</p>
-            //         <p class="shows__info-details">San Francisco, CA</p>
-            //         <a class="shows__ticket-button" href="">BUY TICKETS</a>
-            //     </div>
-            //     <div class="shows__info">
-            //         <p class="shows__info--detail-headings">DATE</p>
-            //         <p class="shows__info-details">Fri Oct 15 2021</p>
-            //         <p class="shows__info--detail-headings">VENUE</p>
-            //         <p class="shows__info-details">View Lounge</p>
-            //         <p class="shows__info--detail-headings">LOCATION</p>
-            //         <p class="shows__info-details">San Francisco, CA</p>
-            //         <a class="shows__ticket-button" href="">BUY TICKETS</a>
-            //     </div>
-            //     <div class="shows__info">
-            //         <p class="shows__info--detail-headings">DATE</p>
-            //         <p class="shows__info-details">Sat Nov 06 2021</p>
-            //         <p class="shows__info--detail-headings">VENUE</p>
-            //         <p class="shows__info-details">Hyatt Agency</p>
-            //         <p class="shows__info--detail-headings">LOCATION</p>
-            //         <p class="shows__info-details">San Francisco, CA</p>
-            //         <a class="shows__ticket-button" href="">BUY TICKETS</a>
-            //     </div>
-            //     <div class="shows__info">
-            //         <p class="shows__info--detail-headings">DATE</p>
-            //         <p class="shows__info-details">Fri Nov 26 2021</p>
-            //         <p class="shows__info--detail-headings">VENUE</p>
-            //         <p class="shows__info-details">Moscow Center</p>
-            //         <p class="shows__info--detail-headings">LOCATION</p>
-            //         <p class="shows__info-details">San Francisco, CA</p>
-            //         <a class="shows__ticket-button" href="">BUY TICKETS</a>
-            //     </div>
-            //     <div class="shows__info">
-            //         <p class="shows__info--detail-headings">DATE</p>
-            //         <p class="shows__info-details">Wed Dec 15 2021</p>
-            //         <p class="shows__info--detail-headings">VENUE</p>
-            //         <p class="shows__info-details">Press Club</p>
-            //         <p class="shows__info--detail-headings">LOCATION</p>
-            //         <p class="shows__info-details">San Francisco, CA</p>
-            //         <a class="shows__ticket-button" href="">BUY TICKETS</a>
-            //     </div>
+                </div>
 
 
-            </section > -->
 
-            <script src="./scripts/build-shows-page.js"></script>
+                <footer class="footer">
+                    <h1 class="footer__title">Get in Touch</h1>
+                    <div class="footer__social">
+                        <img src="./Assets/Icons/SVG/Icon-instagram.svg" alt="" class="footer__social--icons1">
+                        <img src="./Assets/Icons/SVG/Icon-facebook.svg" alt="" class="footer__social--icons2">
+                        <img src="./Assets/Icons/SVG/Icon-twitter.svg" alt="" class="footer__social--icons3">
+
+                    </div>
+                    <div class="footer__contact">
+                        <div class="footer__contact--left">
+                            <p class="footer__contact--info1a">Cam Adams</p>
+                            <p class="footer__contact--info1b">The Bees Knees Management</p>
+                            <div class="footer__contact--info2">
+                                <p class="footer__contact--info2a">501 Broadway Penthouse,</p>
+                                <p class="footer__contact--info2b">New York, NY 10012, USA</p>
+
+                                <p class="footer__contact--info3">info@thebeesknees.com</p>
+                            </div>
+                        </div>
+                        <div class="footer__contact--middle">
+                            <div class="footer__contact--info4">
+                                <p class="footer__contact--info4a">Pearl Gregg</p>
+                                <p class="footer__contact--info4b">Limitless Artist Group</p>
+                            </div>
+                            <div class="footer__contact--info5">
+                                <p class="footer__contact--info5a">Booking Agent for</p>
+                                <p class="footer__contact--info5b">US / South America / Japan</p>
+                            </div>
+                            <p class="footer__contact--info6">pearl.gregg@limitlessag.com</p>
+                        </div>
+                        <div class="footer__contact--right">
+                            <div class="footer__contact--info7">
+                                <p class="footer__contact--info7a">Carson Whyte</p>
+                                <p class="footer__contact--info7b">ARCH Entertainment</p>
+                            </div>
+                            <div class="footer__contact--info8">
+                                <p class="footer__contact--info8a">Bookin Agent for</p>
+                                <p class="footer__contact--info8b">UK / EU / AU</p>
+
+                                <p class="footer__contact--info9">cwhyte@archentertainment.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__copyright">
+                        <img class="footer__name" src="./Assets/Logo/Logo-bandsite.svg" alt="band-name-logo">
+                        <p class="copyright__title">Copyright The Bees Knees © 2021 All Rights Reserved</p>
+                    </div>
+
+                </footer>
+
+
+                <script src="./scripts/build-shows-page.js"></script>
+
+
 
     </body>
 

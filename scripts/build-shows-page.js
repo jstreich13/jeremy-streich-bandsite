@@ -1,60 +1,121 @@
-const showSection = document.querySelector(".shows")
-
-let showList = ['show1', 'show2', 'show3', 'show4', 'show5','show6']
-
-let showDates = document.createElement('ul');
-showDates.classList.add('show__dates');
-
-showSection.appendChild(showDates);
-
-for(let i = 0; i < showList.length; i++){
-   let showDatesItem = document.createElement('li');
-   showDatesItem.classList.add("show__dates-item");
-   showDatesItem.innerText = showList[i]
-   showDates.appendChild(showDatesItem)
-}
 
 
-let shows = document.createElement('div');
-shows.classList.add('shows');
+const showContainer = document.querySelector(".shows");
+
+const showBox = {
+
+   container: [
+	  {
+      date: "DATE",
+      dateData: "Mon Sept 06 20221",
+      venue: "VENUE",
+      venueData: "Ronald Lane",
+      location:"LOCATION",
+      locationData:"San Francisco, CA",
+      button: "Buy Tickets",
+	  },
+	  {
+      date: "DATE",
+      dateData: "Tue Sept 21 2021",
+      venue: "VENUE",
+      venueData: "Pier 3 East",
+      location:"LOCATION",
+      locationData:"San Francisco, CA",
+      button: "Buy Tickets",
+
+	  },
+	  {
+      date: "DATE",
+      dateData: "Fri Oct 15 2021",
+      venue: "VENUE",
+      venueData: "View Lounge",
+      location:"LOCATION",
+      locationData:"San Francisco, CA",
+      button: "Buy Tickets",
+	  },
+     {
+      date: "DATE",
+      dateData: "Sat Nov 06 2021",
+      venue: "VENUE",
+      venueData: "Hyatt Agency",
+      location:"LOCATION",
+      locationData:"San Francisco, CA",
+      button: "Buy Tickets",
+	  },
+	  {
+      date: "DATE",
+      dateData: "Fri Nov 26 2021",
+      venue: "VENUE",
+      venueData: "Moscow Center",
+      location:"LOCATION",
+      locationData:"San Francisco, CA",
+      button: "Buy Tickets",
+
+	  },
+	  {
+      date: "DATE",
+      dateData: "Wed Dec 15 2021",
+      venue: "VENUE",
+      venueData: "Press Club",
+      location:"LOCATION",
+      locationData:"San Francisco, CA",
+      button: "Buy Tickets",
+	  },
+	],
+  };
 
 
-shows.appendChild(showList)
-
-document.main.appendChild(shows)
+  for (i = 0; i < showBox.container.length; i++) {
 
 
 
+   // let commenterAvatar = document.createElement("figure");
+	// commenterAvatar.classList.add("commenter__avatar");
+	// singleShow.appendChild(commenterAvatar);
+  
+   
+   let singleShow = document.createElement("section");
+	singleShow.classList.add("shows__single");
+	showContainer.appendChild(singleShow);
 
-// BEM elements: Header, shows,
+   let showHolder = document.createElement("div");
+	showHolder.classList.add("shows__holder");
+	singleShow.appendChild(showHolder);
 
+	let showDateLabel = document.createElement("p");
+	showDateLabel.classList.add("shows__date--label");
+	showDateLabel.innerText = showBox.container[i].date;
+	showHolder.appendChild(showDateLabel);
 
+	let showDate = document.createElement("p");
+	showDate.classList.add("shows__date");
+	showDate.innerText = showBox.container[i].dateData;
+	showHolder.appendChild(showDate);
 
-// <!-- <section class="shows">
-//                 <h1 class="shows__title">Shows</h1>
-//                 <div class="shows__info">
-//                     <p class="shows__info--detail-headings">DATE</p>
-//                     <p class="shows__info-details">Mon Sept 06 2021</p>
-//                     <p class="shows__info--detail-headings">VENUE</p>
-//                     <p class="shows__info-details">Ronald Lane</p>
-//                     <p class="shows__info--detail-headings">LOCATION</p>
-//                     <p class="shows__info-details">San Francisco, CA</p>
-//                     <a class="shows__ticket-button" href="">BUY TICKETS</a>
-//                 </div>
+   let showVenueLabel = document.createElement("p");
+	showVenueLabel.classList.add("shows__venue--label");
+	showVenueLabel.innerText = showBox.container[i].venue;
+	showHolder.appendChild(showVenueLabel);
+  
+	let showVenue = document.createElement("p");
+	showVenue.classList.add("shows__venue");
+	showVenue.innerText = showBox.container[i].venueData;
+	showHolder.appendChild(showVenue);
+   
+   let showLocationLabel = document.createElement("p");
+	showLocationLabel.classList.add("shows__location--label");
+	showLocationLabel.innerText = showBox.container[i].location;
+	showHolder.appendChild(showLocationLabel);
 
-// ```html
-// <nav class="nav">
-//     <ul class="nav__list">
-//         <li class="nav__list-item">
-//             Home
-//         </li>
-//         <li class="nav__list-item">
-//             About
-//         </li>
-//         <li class="nav__list-item">
-//             Contact
-//         </li>
-//     </ul>
-// </nav>
+	let showLocation = document.createElement("p");
+   showLocation.classList.add("shows__location");
+	showLocation.innerText = showBox.container[i].locationData;
+	showHolder.appendChild(showLocation);
 
+   let buyTickets = document.createElement("button");
+	buyTickets.classList.add("shows__tickets-button");
+	buyTickets.innerText = showBox.container[i].button;
+	showHolder.appendChild(buyTickets);
+  
+  }
 
