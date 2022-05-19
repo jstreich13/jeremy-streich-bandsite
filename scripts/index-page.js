@@ -30,7 +30,10 @@ const user = {
 	],
   };
 
-// function commentCreation() {
+function commentCreation() {
+
+
+	commentsContainer.innerHTML = null;
 
   for (i = 0; i < user.comment.length; i++) {
 
@@ -63,28 +66,28 @@ const user = {
 	commentHolder.appendChild(commentCopy);
 	
   }
-
+}
 
 
   //===== I've commented this section out and will have it fixed for Sprint 3. When active, this
   //===== section and the naming of the function causes all of the above to disappear. Will troubleshoot this week.
 
-// let form = document.querySelector("form")
-// form.addEventListener("submit", (ev) => {
-// 	ev.preventDefault();
-// 	let newUserName = ev.target.name.value
-// 	let newCommentCopy = ev.target.content.value
-// 	let today = new Date();
-// 	let todaysDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-// 	let newComment = {
-// 		name: newUserName,
-// 		date: todaysDate,
-// 		content: newCommentCopy,
-// 		image: "",
-// }
+let form = document.querySelector("form")
+form.addEventListener("submit", (ev) => {
+	ev.preventDefault();
+	let newUserName = ev.target.name.value;
+	let newCommentCopy = ev.target.comments.value;
+	let today = new Date();
+	let todaysDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	let newComment = {
+		name: newUserName,
+		date: todaysDate,
+		content: newCommentCopy,
+		image: "",
+	}
+		user.comment.unshift(newComment);
+		commentCreation();
+		form.reset();
+});
 
-// user.unshift(newComment);
-// commentsWrapper.innterHTML = null;
-// commentCreation();
-// form.reset();
-// )};
+commentCreation();
