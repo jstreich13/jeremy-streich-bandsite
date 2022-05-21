@@ -1,121 +1,64 @@
-
-
+//Targeting container in which shows will exist
 const showContainer = document.querySelector(".shows");
 
-const showBox = {
+//calling API to populate show dates
+const showsURL = 'https://project-1-api.herokuapp.com/showdates?api_key=%3Cyour_api_key_here'
+axios
+   .get(showsURL).then((response) => {
+      console.log(response);
 
-   container: [
-	  {
-      date: "DATE",
-      dateData: "Mon Sept 06 20221",
-      venue: "VENUE",
-      venueData: "Ronald Lane",
-      location:"LOCATION",
-      locationData:"San Francisco, CA",
-      button: "Buy Tickets",
-	  },
-	  {
-      date: "DATE",
-      dateData: "Tue Sept 21 2021",
-      venue: "VENUE",
-      venueData: "Pier 3 East",
-      location:"LOCATION",
-      locationData:"San Francisco, CA",
-      button: "Buy Tickets",
+      const dateArray = response.data;
+      console.log(dateArray);
 
-	  },
-	  {
-      date: "DATE",
-      dateData: "Fri Oct 15 2021",
-      venue: "VENUE",
-      venueData: "View Lounge",
-      location:"LOCATION",
-      locationData:"San Francisco, CA",
-      button: "Buy Tickets",
-	  },
-     {
-      date: "DATE",
-      dateData: "Sat Nov 06 2021",
-      venue: "VENUE",
-      venueData: "Hyatt Agency",
-      location:"LOCATION",
-      locationData:"San Francisco, CA",
-      button: "Buy Tickets",
-	  },
-	  {
-      date: "DATE",
-      dateData: "Fri Nov 26 2021",
-      venue: "VENUE",
-      venueData: "Moscow Center",
-      location:"LOCATION",
-      locationData:"San Francisco, CA",
-      button: "Buy Tickets",
-
-	  },
-	  {
-      date: "DATE",
-      dateData: "Wed Dec 15 2021",
-      venue: "VENUE",
-      venueData: "Press Club",
-      location:"LOCATION",
-      locationData:"San Francisco, CA",
-      button: "Buy Tickets",
-	  },
-	],
-  };
+      for (i = 0; i < response.data.length; i++) {
 
 
-  for (i = 0; i < showBox.container.length; i++) {
+         let singleShow = document.createElement("section");
+         singleShow.classList.add("shows__single");
+         showContainer.appendChild(singleShow);
 
+         let showHolder = document.createElement("div");
+         showHolder.classList.add("shows__holder");
+         singleShow.appendChild(showHolder);
 
+         let showDateLabel = document.createElement("p");
+         showDateLabel.classList.add("shows__date--label");
+         showDateLabel.innerText = "DATE"
+         showHolder.appendChild(showDateLabel);
 
-   // let commenterAvatar = document.createElement("figure");
-	// commenterAvatar.classList.add("commenter__avatar");
-	// singleShow.appendChild(commenterAvatar);
-  
-   
-   let singleShow = document.createElement("section");
-	singleShow.classList.add("shows__single");
-	showContainer.appendChild(singleShow);
+         let showDate = document.createElement("p");
+         showDate.classList.add("shows__date");
+         const date = new Date(dateArray[i].date * 1).toDateString();
+         showDate.innerText = date;
 
-   let showHolder = document.createElement("div");
-	showHolder.classList.add("shows__holder");
-	singleShow.appendChild(showHolder);
+         showHolder.appendChild(showDate);
 
-	let showDateLabel = document.createElement("p");
-	showDateLabel.classList.add("shows__date--label");
-	showDateLabel.innerText = showBox.container[i].date;
-	showHolder.appendChild(showDateLabel);
+         let showVenueLabel = document.createElement("p");
+         showVenueLabel.classList.add("shows__venue--label");
+         showVenueLabel.innerText = "VENUE"
+         showHolder.appendChild(showVenueLabel);
 
-	let showDate = document.createElement("p");
-	showDate.classList.add("shows__date");
-	showDate.innerText = showBox.container[i].dateData;
-	showHolder.appendChild(showDate);
+         let showVenue = document.createElement("p");
+         showVenue.classList.add("shows__venue");
+         showVenue.innerText = response.data[i].place;
+         showHolder.appendChild(showVenue);
 
-   let showVenueLabel = document.createElement("p");
-	showVenueLabel.classList.add("shows__venue--label");
-	showVenueLabel.innerText = showBox.container[i].venue;
-	showHolder.appendChild(showVenueLabel);
-  
-	let showVenue = document.createElement("p");
-	showVenue.classList.add("shows__venue");
-	showVenue.innerText = showBox.container[i].venueData;
-	showHolder.appendChild(showVenue);
-   
-   let showLocationLabel = document.createElement("p");
-	showLocationLabel.classList.add("shows__location--label");
-	showLocationLabel.innerText = showBox.container[i].location;
-	showHolder.appendChild(showLocationLabel);
+         let showLocationLabel = document.createElement("p");
+         showLocationLabel.classList.add("shows__location--label");
+         showLocationLabel.innerText = "LOCATION"
+         showHolder.appendChild(showLocationLabel);
 
-	let showLocation = document.createElement("p");
-   showLocation.classList.add("shows__location");
-	showLocation.innerText = showBox.container[i].locationData;
-	showHolder.appendChild(showLocation);
+         let showLocation = document.createElement("p");
+         showLocation.classList.add("shows__location");
+         showLocation.innerText = response.data[i].location;
+         showHolder.appendChild(showLocation);
 
-   let buyTickets = document.createElement("button");
-	buyTickets.classList.add("shows__tickets-button");
-	buyTickets.innerText = showBox.container[i].button;
-	showHolder.appendChild(buyTickets);
-  
-  }
+         let buyTickets = document.createElement("button");
+         buyTickets.classList.add("shows__tickets-button");
+         buyTickets.innerText = "Buy Tickets"
+         showHolder.appendChild(buyTickets);
+
+      }
+   });
+
 

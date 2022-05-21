@@ -529,7 +529,7 @@ body {
   }
 }
 
-.text--demi {
+.commenter-name {
   font-family: "Avenir Next Demi";
   color: #323232;
   display: inline-flex;
@@ -538,7 +538,7 @@ body {
   margin-bottom: 0%;
 }
 @media screen and (min-width: 768px) {
-  .text--demi {
+  .commenter-name {
     font-family: "Avenir Next Demi";
     color: #323232;
     display: inline-flex;

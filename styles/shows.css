@@ -208,6 +208,7 @@ body {
 
 .shows {
   height: 151vh;
+  overflow: scroll;
 }
 .shows__dates {
   font-family: Avenir Next;
