@@ -1,131 +1,121 @@
+let form = document.querySelector("form");
+
 //declaring commentsSection container
 const commentsSection = document.querySelector(".comments__list");
 //linking API to website with axios
 const commentsURL = 'https://project-1-api.herokuapp.com/comments?api_key=%3Cyour_api_key_here'
-axios
-	.get(commentsURL).then((response) => {
-		console.log(response);
+function getComment() {
+	axios
+		.get(commentsURL)
+		.then(response => {
+			const comments = response.data;
+			comments.sort((a, b) => b.timestamp - a.timestamp);
+			displayingComments(comments);
+			console.log(response);
+		})
+		.catch(error => {
+			console.log(error)
+		});
+};
+//functional for loop to cycle through and be created with data from api
+function displayingComments(commentsList) {
 
 
-		//for loop to cycle through and be created with data from api
-		for (let i = 0; i < response.data.length; i++) {
+	for (let i = 0; i < commentsList.length; i++) {
 
-			let oneCommentContainer = document.createElement("section");
-			oneCommentContainer.classList.add("comments__single");
-			commentsSection.appendChild(oneCommentContainer);
+		let oneCommentContainer = document.createElement("li");
+		oneCommentContainer.classList.add("comments__single");
+		commentsSection.appendChild(oneCommentContainer);
 
-			let commenterAvatar = document.createElement("figure");
-			commenterAvatar.classList.add("commenter__avatar");
-			oneCommentContainer.appendChild(commenterAvatar);
+		let commenterAvatar = document.createElement("figure");
+		commenterAvatar.classList.add("commenter__avatar");
+		oneCommentContainer.appendChild(commenterAvatar);
 
-			let commentHolder = document.createElement("div");
-			commentHolder.classList.add("comments__holder");
-			oneCommentContainer.appendChild(commentHolder);
+		let commentHolder = document.createElement("div");
+		commentHolder.classList.add("comments__holder");
+		oneCommentContainer.appendChild(commentHolder);
 
-			let userName = document.createElement("p");
-			userName.classList.add("commenter-name");
-			userName.innerText = response.data[i].name;
-			commentHolder.appendChild(userName);
+		let userName = document.createElement("p");
+		userName.classList.add("commenter-name");
+		userName.innerText = commentsList[i].name;
+		commentHolder.appendChild(userName);
 
+		let datePosted = document.createElement("p");
+		datePosted.classList.add("date--text");
+		const date = commentsList[i].timestamp;
+		const commentDate = new Date(date * 1).toDateString();
 
-			let datePosted = document.createElement("p");
-			datePosted.classList.add("date--text");
-			datePosted.innerText = response.data[i].timestamp;
-			commentHolder.appendChild(datePosted);
+		console.log(date)
+		datePosted.innerText = commentDate;
+		commentHolder.appendChild(datePosted);
 
-			let commentCopy = document.createElement("p");
-			commentCopy.classList.add("comments__copy")
-			commentCopy.innerText = response.data[i].comment;
-			commentHolder.appendChild(commentCopy);
+		let commentCopy = document.createElement("p");
+		commentCopy.classList.add("comments__copy")
+		commentCopy.innerText = commentsList[i].comment;
+		commentHolder.appendChild(commentCopy);
+	}
 
-		}
-
-	})
-	.catch(error => {
-		console.log(error);
-	});
+}
 
 
+function postingComments(newComment) {
+	axios.post(commentsURL, newComment)
+		.then((response) => {
+			form.reset();
+			getComment();
+			console.log(comments);
+		})
+		.catch(error => {
+			console.log(error);
+		});
+};
+
+getComment();
 
 // activation of form for commenter submissiong
 
-let form = document.querySelector("form")
+
 form.addEventListener("submit", (ev) => {
 	ev.preventDefault();
-	let newUserName = ev.target.name.value;
-	let newCommentCopy = ev.target.comments.value;
-	let today = new Date();
-	let todaysDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 	let newComment = {
-		name: newUserName,
-		date: todaysDate,
-		content: newCommentCopy,
-		image: "",
+		name: ev.target.name.value,
+		comment: ev.target.comments.value,
+		// image: ""
 	}
-	response.data.unshift(newComment);
-	commentCreation();
-	form.reset();
+
+	commentsSection.innerHTML = null;
+	postingComments(newComment);
+	// response.data.unshift(newComment);
+	// commentCreation();
+
 });
 
-//declaring function which appends the user's input to the page
-function commentCreation() {
+// //declaring function which appends the user's input to the page
+// function commentCreation() {
 
 
-	///===confused as to why the container is being created before submission, 
+	///===confused as to why the container is being created before submission,
 	//and why submission is not working
-	commentsSection.innerHTML = null;
-
-	let oneCommentContainer = document.createElement("section");
-	oneCommentContainer.classList.add("comments__single");
-	commentsSection.appendChild(oneCommentContainer);
-
-	let commenterAvatar = document.createElement("figure");
-	commenterAvatar.classList.add("commenter__avatar");
-	oneCommentContainer.appendChild(commenterAvatar);
-
-	let commentHolder = document.createElement("div");
-	commentHolder.classList.add("comments__holder");
-	oneCommentContainer.appendChild(commentHolder);
-
-	let userName = document.createElement("p");
-	userName.classList.add("commenter-name");
-	userName.innerText = response.data[i].name;
-	commentHolder.appendChild(userName);
-
-	let datePosted = document.createElement("p");
-	datePosted.classList.add("date--text");
-	datePosted.innerText = response.data[i].timestamp;
-	commentHolder.appendChild(datePosted);
-
-	let commentCopy = document.createElement("p");
-	commentCopy.classList.add("comments__copy")
-	commentCopy.innerText = response.data[i].comment;
-	commentHolder.appendChild(commentCopy);
-
-}
 
 
-commentCreation();
 
 
-//posting data from comments to API
+// commentCreation();
 
 
-const headers = {
-	"Content-Type": "application/json"
-}
-
-const data = {
-	"name": "name.value"
-	"timestamp": "fullDate"
-	"comment": "comments.value"
-}
+// //posting data from comments to API
 
 
-axios.post(commendAPI, data, headers)
-	.then(response => {
-		console.log(response.data);
-	}).catch(error => {
-		console.log(error);
-	});
+// const headers = {
+// 	"Content-Type": "application/json"
+// }
+
+// const data = {
+// 	"name": "name.value"
+// 	"timestamp": "fullDate"
+// 	"comment": "comments.value"
+// }
+
+
+
 

@@ -1,27 +1,3 @@
-html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  margin: 0;
-}
-html,
-body {
-  margin: 0;
-  margin-right: 0%;
-  overflow-x: hidden;
-}
-
-@font-face {
-  font-family: "Avenir Next";
-  src: url(../.././Assets/Font/AvenirNextLTPro-Regular.otf);
-}
-@font-face {
-  font-family: "Avenir Next Demi";
-  src: url(../../Assets/Font/AvenirNextLTPro-Demi.otf);
-}
-@font-face {
-  font-family: "Avenir Next";
-  src: url(../.././Assets/Font/AvenirNextLTPro-Regular.otf);
-}
 .h1 {
   font-size: 24px;
   line-height: 32px;
@@ -42,6 +18,30 @@ body {
   color: #323232;
 }
 
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url(../../Assets/Font/AvenirNextLTPro-Demi.otf);
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../.././Assets/Font/AvenirNextLTPro-Regular.otf);
+}
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+}
+html,
+body {
+  margin: 0;
+  margin-right: 0%;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../.././Assets/Font/AvenirNextLTPro-Regular.otf);
+}
 .main {
   margin-left: 16px;
   margin-right: 16px;
@@ -227,6 +227,15 @@ body {
   padding-top: 0px;
   margin-top: 0px;
 }
+@media screen and (min-width: 1280px) {
+  .about {
+    width: 104vw;
+    padding-top: 0px;
+    margin-bottom: 12vh;
+    margin-top: 0px;
+  }
+}
+
 .about__title {
   margin-bottom: 0px;
   margin-left: 20px;
@@ -492,7 +501,7 @@ body {
   width: 98%;
   display: flex;
   margin-top: 3%;
-  font-size: 4.5vw;
+  font-size: 2.5vw;
 }
 @media screen and (min-width: 768px) {
   .comments__copy {
@@ -812,12 +821,12 @@ body {
     position: relative;
   }
 }
+
 .footer__contact--info1a {
   color: white;
   font-family: Avenir Next;
   margin: 3vh 0 0 0;
 }
-
 @media screen and (min-width: 768px) {
   .footer__contact--info1a {
     margin-top: 0px;
@@ -826,13 +835,13 @@ body {
     top: 2.5vh;
   }
 }
+
 .footer__contact--info1b {
   margin: 0 0 0 0;
   font-family: Avenir Next;
   color: white;
   white-space: nowrap;
 }
-
 @media screen and (min-width: 768px) {
   .footer__contact--info1b {
     margin-top: 0px;
@@ -841,6 +850,7 @@ body {
     top: 2.5vh;
   }
 }
+
 .footer__contact--info2 {
   color: white;
   font-family: Avenir Next;
@@ -880,6 +890,7 @@ body {
     bottom: 42vh;
   }
 }
+
 .footer__contact--info4 {
   color: white;
   font-family: Avenir Next;
@@ -940,17 +951,18 @@ body {
     left: 68vw;
   }
 }
+
 .footer__contact--info7 {
   color: white;
   font-family: Avenir Next;
   margin: 3vh 0 0 0;
 }
-
 @media screen and (min-width: 768px) {
   .footer__contact--info7 {
     font-size: 3vw;
   }
 }
+
 .footer__contact--info7a {
   color: white;
   font-family: Avenir Next;
@@ -1006,6 +1018,7 @@ body {
     font-size: 2vw;
   }
 }
+
 .footer__copyright {
   color: white;
   padding-bottom: 1vh;
@@ -1029,7 +1042,6 @@ body {
   max-width: 120px;
   margin-top: 7vh;
 }
-
 @media screen and (min-width: 768px) {
   .footer__name {
     margin-top: 0;
@@ -1049,10 +1061,10 @@ body {
     width: 5vw;
   }
 }
+
 .copyright__title {
   color: white;
 }
-
 @media screen and (min-width: 768px) {
   .copyright__title {
     position: relative;
@@ -1068,6 +1080,7 @@ body {
     margin-left: 1%;
   }
 }
+
 .header__links {
   text-decoration: none;
 }/*# sourceMappingURL=bio.css.map */

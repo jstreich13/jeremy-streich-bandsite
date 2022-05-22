@@ -1,0 +1,42 @@
+.h1 {
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: 700;
+}
+.h2 {
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.p {
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 400;
+	color: #323232;
+}
+
+@font-face {
+	font-family: 'Avenir Next Demi';
+	src: url(../../Assets/Font/AvenirNextLTPro-Demi.otf);
+}
+
+@font-face {
+	font-family: 'Avenir Next';
+	src: url(../.././Assets/Font/AvenirNextLTPro-Regular.otf);
+}
+
+@mixin font-face {
+	@font-face {
+		font-family: 'Avenir Next';
+		src: url(../.././Assets/Font/AvenirNextLTPro-Regular.otf);
+	}
+}
+
+@mixin font-face-heavy {
+	@font-face-heavy {
+		font-family: 'Avenir Next Bold';
+		src: url(../.././Assets/Font/AvenirNextLTPro-Bold.otf);
+	}
+}

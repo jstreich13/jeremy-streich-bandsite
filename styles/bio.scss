@@ -1,5 +1,6 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
+@use './partials/typography' as *;
 
 html {
 	box-sizing: border-box;
@@ -10,6 +11,7 @@ html {
 	@include desktop {
 	}
 }
+
 html,
 body {
 	margin: 0;
@@ -18,35 +20,6 @@ body {
 }
 
 @include font-face;
-
-@font-face {
-	font-family: 'Avenir Next Demi';
-	src: url(../../Assets/Font/AvenirNextLTPro-Demi.otf);
-}
-
-@font-face {
-	font-family: 'Avenir Next';
-	src: url(../.././Assets/Font/AvenirNextLTPro-Regular.otf);
-}
-
-.h1 {
-	font-size: 24px;
-	line-height: 32px;
-	font-weight: 700;
-}
-.h2 {
-	font-size: 14px;
-	line-height: 22px;
-	font-weight: 600;
-	text-decoration: none;
-}
-
-.p {
-	font-size: 13px;
-	line-height: 18px;
-	font-weight: 400;
-	color: #323232;
-}
 
 .main {
 	@include marg;
@@ -230,7 +203,11 @@ body {
 	padding-top: 0px;
 	margin-top: 0px;
 
-	@include tablet {
+	@include desktop {
+		width: 104vw;
+		padding-top: 0px;
+		margin-bottom: 12vh;
+		margin-top: 0px;
 	}
 }
 
@@ -509,7 +486,7 @@ body {
 		width: 98%;
 		display: flex;
 		margin-top: 3%;
-		font-size: 4.5vw;
+		font-size: 2.5vw;
 		@include tablet {
 			font-family: Avenir Next;
 			width: 98%;
@@ -798,8 +775,8 @@ body {
 	font-family: "Avenir Next";
 }
 
-@media screen and (min-width: 768px) {
-	.footer__contact--left {
+.footer__contact--left {
+	@include tablet {
 		padding-top: 0;
 		display: flex;
 		flex-direction: column;
@@ -807,9 +784,8 @@ body {
 		left: 2vw;
 		bottom: 10vh;
 	}
-}
-@media screen and (min-width: 1280px) {
-	.footer__contact--left {
+
+	@include desktop {
 		display: flex;
 		flex-direction: column;
 		position: relative;
@@ -820,9 +796,8 @@ body {
 	color: white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
-}
-@media screen and (min-width: 768px) {
-	.footer__contact--info1a {
+
+	@include tablet {
 		margin-top: 0px;
 		padding-top: 0px;
 		position: relative;
@@ -835,9 +810,8 @@ body {
 	font-family: Avenir Next;
 	color: white;
 	white-space: nowrap;
-}
-@media screen and (min-width: 768px) {
-	.footer__contact--info1b {
+
+	@include tablet {
 		margin-top: 0px;
 		padding-top: 0px;
 		position: relative;
@@ -865,17 +839,17 @@ body {
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
 }
-@media screen and (min-width: 768px) {
-	.footer__contact--middle {
+
+.footer__contact--middle {
+	@include tablet {
 		display: flex;
 		flex-direction: column;
 		position: absolute;
 		left: 36vw;
 		bottom: 27.5vh;
 	}
-}
-@media screen and (min-width: 1280px) {
-	.footer__contact--middle {
+
+	@include desktop {
 		position: relative;
 		bottom: 42vh;
 	}
@@ -916,17 +890,17 @@ body {
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
 }
-@media screen and (min-width: 768px) {
-	.footer__contact--right {
+
+.footer__contact--right {
+	@include tablet {
 		display: flex;
 		flex-direction: column;
 		position: relative;
 		left: 68vw;
 		bottom: 26.5vh;
 	}
-}
-@media screen and (min-width: 1280px) {
-	.footer__contact--right {
+
+	@include desktop {
 		display: flex;
 		flex-direction: column;
 		position: relative;
@@ -939,9 +913,8 @@ body {
 	color: white;
 	font-family: Avenir Next;
 	margin: 3vh 0 0 0;
-}
-@media screen and (min-width: 768px) {
-	.footer__contact--info7 {
+
+	@include tablet {
 		font-size: 3vw;
 	}
 }
@@ -975,23 +948,24 @@ body {
 	color: white;
 	margin: 3vh 0 0 0;
 }
-@media screen and (min-width: 768px) {
-	.footer__contact--info1a,
-	.footer__contact--info1b,
-	.footer__contact--info2a,
-	.footer__contact--info2b,
-	.footer__contact--info3,
-	.footer__contact--info4a,
-	.footer__contact--info4b,
-	.footer__contact--info5a,
-	.footer__contact--info5b,
-	.footer__contact--info6,
-	.footer__contact--info7,
-	.footer__contact--info7a,
-	.footer__contact--info7b,
-	.footer__contact--info8a,
-	.footer__contact--info8b,
-	.footer__contact--info9 {
+
+.footer__contact--info1a,
+.footer__contact--info1b,
+.footer__contact--info2a,
+.footer__contact--info2b,
+.footer__contact--info3,
+.footer__contact--info4a,
+.footer__contact--info4b,
+.footer__contact--info5a,
+.footer__contact--info5b,
+.footer__contact--info6,
+.footer__contact--info7,
+.footer__contact--info7a,
+.footer__contact--info7b,
+.footer__contact--info8a,
+.footer__contact--info8b,
+.footer__contact--info9 {
+	@include tablet {
 		font-size: 2vw;
 	}
 }
@@ -1015,9 +989,8 @@ body {
 	max-height: 20px;
 	max-width: 120px;
 	margin-top: 7vh;
-}
-@media screen and (min-width: 768px) {
-	.footer__name {
+
+	@include tablet {
 		margin-top: 0;
 		position: relative;
 		left: 156vw;
@@ -1026,9 +999,8 @@ body {
 		width: 28vw;
 		min-height: 3vh;
 	}
-}
-@media screen and (min-width: 1280px) {
-	.footer__name {
+
+	@include desktop {
 		margin-top: 0;
 		left: 40vw;
 		top: -110vh;
@@ -1038,16 +1010,14 @@ body {
 
 .copyright__title {
 	color: white;
-}
-@media screen and (min-width: 768px) {
-	.copyright__title {
+
+	@include tablet {
 		position: relative;
 		bottom: 14vh;
 		left: 2vw;
 	}
-}
-@media screen and (min-width: 1280px) {
-	.copyright__title {
+
+	@include desktop {
 		position: relative;
 		bottom: 57vh;
 		white-space: nowrap;
