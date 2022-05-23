@@ -17,7 +17,7 @@ function getComment() {
 			console.log(error)
 		});
 };
-//functional for loop to cycle through and be created with data from api
+//functional for loop to cycle through and be created with comment data from api
 function displayingComments(commentsList) {
 
 
@@ -80,42 +80,11 @@ form.addEventListener("submit", (ev) => {
 	let newComment = {
 		name: ev.target.name.value,
 		comment: ev.target.comments.value,
-		// image: ""
+
 	}
 
 	commentsSection.innerHTML = null;
 	postingComments(newComment);
-	// response.data.unshift(newComment);
-	// commentCreation();
+
 
 });
-
-// //declaring function which appends the user's input to the page
-// function commentCreation() {
-
-
-	///===confused as to why the container is being created before submission,
-	//and why submission is not working
-
-
-
-
-// commentCreation();
-
-
-// //posting data from comments to API
-
-
-// const headers = {
-// 	"Content-Type": "application/json"
-// }
-
-// const data = {
-// 	"name": "name.value"
-// 	"timestamp": "fullDate"
-// 	"comment": "comments.value"
-// }
-
-
-
-

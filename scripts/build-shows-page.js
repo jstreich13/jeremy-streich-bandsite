@@ -2,27 +2,30 @@
 const showContainer = document.querySelector(".shows");
 
 //calling API to populate show dates
-const showsURL = 'https://project-1-api.herokuapp.com/showdates?api_key=%3Cyour_api_key_here'
+const showsURL = 'https://project-1-api.herokuapp.com/showdates?api_key=0ea3bafa-fb50-4880-b2a4-067c7dd2a2f6'
+
+
+
+// getting data from the api
 axios
-function getShow() {
    .get(showsURL)
-      .then(response => {
-         console.log(response);
-         const dateArray = response.data;
-         displayingShow(dateArray);
-      }
+   .then(response => {
+
+      const showsArray = response.data
+      displayingShow(showsArray);
+      console.log(showsArray)
+
+   })
+   .catch(error => {
+      console.log(error)
+   });
+// };
 
 
-         })
-         .catch (error => {
-   console.log(error)
-});
 
-
-function displayingShow(showsList) {
-   const dateArray = response.data;
-   for (i = 0; i < dateArray.length; i++) {
-
+//functional for loop to cycle through and be created with show data from api
+function displayingShow(showsArray) {
+   for (i = 0; i < showsArray.length; i++) {
 
       let singleShow = document.createElement("li");
       singleShow.classList.add("shows__single");
@@ -39,10 +42,7 @@ function displayingShow(showsList) {
 
       let showDate = document.createElement("p");
       showDate.classList.add("shows__date");
-      const date = showsList[i].date;
-      const showDate = new Date(date * 1).toDateString();
-      showDate.innerText = date;
-
+      showDate.innerText = new Date(Number(showsArray[i].date)).toDateString();
       showHolder.appendChild(showDate);
 
       let showVenueLabel = document.createElement("p");
@@ -52,7 +52,7 @@ function displayingShow(showsList) {
 
       let showVenue = document.createElement("p");
       showVenue.classList.add("shows__venue");
-      showVenue.innerText = showsList[i].place;
+      showVenue.innerText = showsArray[i].place;
       showHolder.appendChild(showVenue);
 
       let showLocationLabel = document.createElement("p");
@@ -62,16 +62,12 @@ function displayingShow(showsList) {
 
       let showLocation = document.createElement("p");
       showLocation.classList.add("shows__location");
-      showLocation.innerText = showsList[i].location;
+      showLocation.innerText = showsArray[i].location;
       showHolder.appendChild(showLocation);
 
       let buyTickets = document.createElement("button");
       buyTickets.classList.add("shows__tickets-button");
       buyTickets.innerText = "Buy Tickets"
       showHolder.appendChild(buyTickets);
-
    }
 };
-
-
-
