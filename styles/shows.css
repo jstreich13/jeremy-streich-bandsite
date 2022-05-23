@@ -199,7 +199,7 @@ body {
 }
 
 .shows {
-  height: 151vh;
+  height: 110vh;
   overflow: scroll;
 }
 .shows__date--label {
@@ -207,17 +207,86 @@ body {
   color: dimgray;
   font-size: 3vw;
 }
+@media screen and (min-width: 768px) {
+  .shows__date--label {
+    height: 122vh;
+    overflow: scroll;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__date--label {
+    height: 122vh;
+    overflow: scroll;
+  }
+}
+.shows__labels {
+  visibility: hidden;
+}
+@media screen and (min-width: 768px) {
+  .shows__labels {
+    display: inline-flex;
+    font-family: Avenir Next;
+    color: dimgray;
+    font-size: 3vw;
+    visibility: visible;
+    margin-left: 1%;
+    margin-right: 19%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__labels {
+    display: inline-flex;
+    font-family: Avenir Next;
+    color: dimgray;
+    font-size: 3vw;
+    visibility: visible;
+    margin-left: 1%;
+    margin-right: 19%;
+    margin-bottom: 7%;
+  }
+}
 .shows__header {
   margin-left: 5%;
-  margin-top: 9%;
+  margin-top: 3%;
   font-family: "Avenir Next Demi";
   font-size: 10vw;
+  margin-bottom: -25%;
+}
+@media screen and (min-width: 768px) {
+  .shows__header {
+    margin-left: 5%;
+    margin-top: 6%;
+    font-family: "Avenir Next Demi";
+    font-size: 10vw;
+    margin-bottom: 5%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__header {
+    margin-left: 5%;
+    margin-top: 6%;
+    font-family: "Avenir Next Demi";
+    font-size: 10vw;
+    margin-bottom: 5%;
+  }
 }
 .shows__date {
   font-family: Avenir Next;
 }
 .shows__single {
   font-family: Avenir Next;
+}
+@media screen and (min-width: 768px) {
+  .shows__single {
+    font-family: Avenir Next;
+    display: inline-flex;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__single {
+    font-family: Avenir Next;
+    display: inline-flex;
+  }
 }
 .shows__holder {
   font-family: Avenir Next;
@@ -226,32 +295,170 @@ body {
   width: 90%;
   margin-bottom: 9%;
 }
+@media screen and (min-width: 768px) {
+  .shows__holder {
+    font-family: Avenir Next;
+    border-bottom: 2px solid dimgray;
+    width: 90%;
+    margin-bottom: 9%;
+    display: flex;
+    align-items: baseline;
+    align-content: space-around;
+    height: 3vh;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__holder {
+    font-family: Avenir Next;
+    border-bottom: 2px solid dimgray;
+    width: 90%;
+    margin-bottom: 9%;
+    display: flex;
+    align-items: baseline;
+    align-content: space-around;
+    height: 3vh;
+  }
+}
 .shows__date {
   font-family: Avenir Next Demi;
   font-size: 3vw;
+}
+@media screen and (min-width: 768px) {
+  .shows__date {
+    font-family: Avenir Next Demi;
+    font-size: 3vw;
+    white-space: nowrap;
+    margin-left: -5%;
+    margin-right: -3%;
+    align-self: flex-end;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__date {
+    font-family: Avenir Next Demi;
+    font-size: 3vw;
+    white-space: nowrap;
+    margin-left: -5%;
+    margin-right: -3%;
+    align-self: flex-end;
+  }
 }
 .shows__date--label {
   font-family: Avenir Next;
   color: dimgray;
   font-size: 2vw;
 }
+@media screen and (min-width: 768px) {
+  .shows__date--label {
+    font-family: Avenir Next;
+    color: dimgray;
+    font-size: 2vw;
+    display: inline-flex;
+    white-space: nowrap;
+    visibility: hidden;
+    align-self: flex-end;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__date--label {
+    font-family: Avenir Next;
+    color: dimgray;
+    font-size: 2vw;
+    display: inline-flex;
+    white-space: nowrap;
+    visibility: hidden;
+    align-self: flex-end;
+  }
+}
 .shows__venue {
   font-family: Avenir Next;
   font-size: 3vw;
+}
+@media screen and (min-width: 768px) {
+  .shows__venue {
+    font-family: Avenir Next;
+    font-size: 3vw;
+    white-space: nowrap;
+    margin-right: -6%;
+    align-content: flex-end;
+    margin-top: -10%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__venue {
+    font-family: Avenir Next;
+    font-size: 3vw;
+    white-space: nowrap;
+    margin-right: -6%;
+    align-content: flex-end;
+    margin-top: -10%;
+  }
 }
 .shows__venue--label {
   font-family: Avenir Next;
   color: dimgray;
   font-size: 2vw;
 }
+@media screen and (min-width: 768px) {
+  .shows__venue--label {
+    font-family: Avenir Next;
+    color: dimgray;
+    font-size: 2vw;
+    visibility: hidden;
+    align-self: flex-end;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__venue--label {
+    font-family: Avenir Next;
+    color: dimgray;
+    font-size: 2vw;
+    visibility: hidden;
+    align-self: flex-end;
+  }
+}
 .shows__location {
   font-family: Avenir Next;
   font-size: 3vw;
+}
+@media screen and (min-width: 768px) {
+  .shows__location {
+    font-family: Avenir Next;
+    font-size: 3vw;
+    white-space: nowrap;
+    align-self: flex-end;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__location {
+    font-family: Avenir Next;
+    font-size: 3vw;
+    white-space: nowrap;
+    align-self: flex-end;
+  }
 }
 .shows__location--label {
   font-family: Avenir Next;
   color: dimgray;
   font-size: 2vw;
+}
+@media screen and (min-width: 768px) {
+  .shows__location--label {
+    font-family: Avenir Next;
+    color: dimgray;
+    font-size: 2vw;
+    visibility: hidden;
+    align-self: flex-end;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__location--label {
+    font-family: Avenir Next;
+    color: dimgray;
+    font-size: 2vw;
+    visibility: hidden;
+    align-self: flex-end;
+  }
 }
 .shows__tickets-button {
   font-family: Avenir Next;
@@ -263,6 +470,38 @@ body {
   border-radius: 6%;
   border: none;
   font-size: 4vw;
+}
+@media screen and (min-width: 768px) {
+  .shows__tickets-button {
+    font-family: Avenir Next;
+    padding: 2%;
+    color: #fafafa;
+    width: 98%;
+    background-color: #323232;
+    border-radius: 6%;
+    border: none;
+    font-size: 2vw;
+    white-space: nowrap;
+    margin-right: -1%;
+    margin-left: 3%;
+    margin-top: -6%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__tickets-button {
+    font-family: Avenir Next;
+    padding: 2%;
+    color: #fafafa;
+    width: 98%;
+    background-color: #323232;
+    border-radius: 6%;
+    border: none;
+    font-size: 2vw;
+    white-space: nowrap;
+    margin-right: -1%;
+    margin-left: 3%;
+    margin-top: -6%;
+  }
 }
 
 .hero__image {
